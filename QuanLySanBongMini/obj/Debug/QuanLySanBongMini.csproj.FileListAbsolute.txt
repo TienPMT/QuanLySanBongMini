@@ -1,0 +1,17 @@
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\QuanLySanBongMini.exe.config
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\QuanLySanBongMini.exe
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\QuanLySanBongMini.pdb
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.csproj.AssemblyReference.cache
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.Login_Form.resources
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.Properties.Resources.resources
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.csproj.GenerateResource.cache
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.csproj.CoreCompileInputs.cache
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.exe
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.pdb
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.exe.config
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.Main_Form.resources
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\EntityFramework.dll
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\EntityFramework.SqlServer.dll
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\EntityFramework.xml
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\bin\Debug\EntityFramework.SqlServer.xml
+E:\Desktop\Tiến\HUIT\Năm 3\Học kì 1\.NET\Đồ án\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySa.EE94099F.Up2Date
