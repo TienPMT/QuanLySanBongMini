@@ -67,6 +67,12 @@
     <Compile Include="Database\Entities\SanPham.cs" />
     <Compile Include="Database\Entities\TaiKhoan.cs" />
     <Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
+    <Compile Include="FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,7 +10,7 @@ namespace QuanLySanBongMini.Database
 {
     public class QL_SANBONG_MINIDatacontext: DbContext
     {
-        public QL_SANBONG_MINIDatacontext(): base("Server= DESKTOP-S9NUQEL\\MSSQLSERVER_2012; Database= QL_SANBONG_MINI; User ID= sa; Password= 123")
+        public QL_SANBONG_MINIDatacontext(): base("Server=LAPTOP-FKT50S5U\\SQLEXPRESS; Database= QL_SANBONG_MINI; Integrated Security=true")
         {
 
         }
