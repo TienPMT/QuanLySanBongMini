@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|c:\\users\\user\\onedrive\\documents\\2025_2026\\hki_nam_3\\congnghedotnet\\quanlysanbongmini\\quanlysanbongmini\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\User\\OneDrive\\Documents\\2025_2026\\HKI_Nam_3\\CongNgheDotNet\\QuanLySanBongMini\\quanlysanbongmini\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "QuanLySanBongMini\\FKhachHang.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documents\\2025_2026\\HKI_Nam_3\\CongNgheDotNet\\QuanLySanBongMini\\QuanLySanBongMini\\FKhachHang.cs",
               "RelativeToolTip": "QuanLySanBongMini\\FKhachHang.cs",
-              "ViewState": "AgIAAA4BAAAAAAAAAIAwwBoBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAtwBoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T05:54:30.779Z",
               "EditorCaption": ""
@@ -42,8 +42,7 @@
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documents\\2025_2026\\HKI_Nam_3\\CongNgheDotNet\\QuanLySanBongMini\\QuanLySanBongMini\\FKhachHang.cs [Design]",
               "RelativeToolTip": "QuanLySanBongMini\\FKhachHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T04:15:55.123Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-09T04:15:55.123Z"
             }
           ]
         }
