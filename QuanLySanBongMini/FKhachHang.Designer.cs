@@ -477,6 +477,8 @@
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(379, 22);
             this.txtTenKH.TabIndex = 5;
+            this.txtTenKH.TextChanged += new System.EventHandler(this.txtTenKH_TextChanged);
+            this.txtTenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKH_KeyPress);
             // 
             // txtMaKH
             // 

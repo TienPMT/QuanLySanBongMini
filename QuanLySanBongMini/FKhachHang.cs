@@ -67,8 +67,14 @@ namespace QuanLySanBongMini
                 Load_Datagridview(khachHangs);
             }
             txtMaKH.Enabled = false;
+            ClearForm();
         }
-
+        private void ClearForm()
+        {
+            txtMaKH.Clear();
+            txtSDT.Clear();
+            txtTenKH.Clear();
+        }
         private async Task<string> TaoMaKH()
         {
             using (var db =new QL_SANBONG_MINIDatacontext())
@@ -97,6 +103,7 @@ namespace QuanLySanBongMini
         {
             dgvKH.AutoGenerateColumns = false;
             dgvKH.DataSource = khachHangs;
+            ClearForm();
         }
         private void ValidateTextChanged(object sender, EventArgs e)
         {
@@ -202,6 +209,7 @@ namespace QuanLySanBongMini
                 }
                 MessageBox.Show("Thêm thành công");
             }
+            ClearForm();
         }
 
         private async void btnSua_Click(object sender, EventArgs e)
@@ -244,6 +252,7 @@ namespace QuanLySanBongMini
                 }
                 MessageBox.Show("Sửa thành công");
             }
+            ClearForm();
         }
 
         private async void btnXoa_Click(object sender, EventArgs e)
@@ -279,6 +288,7 @@ namespace QuanLySanBongMini
                 }
                 MessageBox.Show("Xóa thành công");
             }
+            ClearForm();
         }
 
         private async void btnTimKiem_Click(object sender, EventArgs e)
@@ -296,6 +306,29 @@ namespace QuanLySanBongMini
                     List<KhachHang> khachHangs = await db.KhachHangs.Where(k=>k.SDT.Contains(keyword)).ToListAsync();
                     Load_Datagridview(khachHangs);
                 }
+            }
+        }
+
+        private void txtTenKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTenKH_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txtBox = sender as TextBox;
+            string currentText = txtBox.Text;
+            int currentCursorPos = txtBox.SelectionStart;
+            string onlyLetterText = new string(
+                currentText.Where(l => char.IsLetter(l)).ToArray()
+                );
+            if (onlyLetterText != currentText)
+            {
+                txtBox.Text = onlyLetterText;
+                txtBox.SelectionStart = Math.Min(currentCursorPos, onlyLetterText.Length);
             }
         }
     }
