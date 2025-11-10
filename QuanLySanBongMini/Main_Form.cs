@@ -14,11 +14,22 @@ namespace QuanLySanBongMini
     {
         private Button currentActiveButton = null;
 
+        //Khởi tạo uc
+        ucKhachHang UIKhachHang = new ucKhachHang();
+        ucSanBong UISanBong = new ucSanBong();
+
         public Main_Form()
         {
             InitializeComponent();
             // Set default active button
             SetActiveButton(btnHeThong);
+        }
+
+        private void loadUserControl(UserControl uc)
+        {
+            pnlMainContent.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            pnlMainContent.Controls.Add(uc);
         }
 
         // Method to handle button active state
@@ -52,12 +63,14 @@ namespace QuanLySanBongMini
         {
             SetActiveButton(btnKhachHang);
             // Logic sẽ thêm ở giai đoạn 2
+            loadUserControl(UIKhachHang);
         }
 
         private void btnSanBong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnSanBong);
             // Logic sẽ thêm ở giai đoạn 2
+            loadUserControl(UISanBong);
         }
 
         private void btnBanHang_Click(object sender, EventArgs e)
@@ -84,5 +97,9 @@ namespace QuanLySanBongMini
             // Logic sẽ thêm ở giai đoạn 2
         }
 
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

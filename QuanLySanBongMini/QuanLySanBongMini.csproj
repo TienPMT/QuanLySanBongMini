@@ -67,23 +67,11 @@
     <Compile Include="Database\Entities\SanPham.cs" />
     <Compile Include="Database\Entities\TaiKhoan.cs" />
     <Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
-    <Compile Include="FKhachHang.cs">
+    <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FKhachHang.Designer.cs">
-      <DependentUpon>FKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FSanBong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FSanBong.Designer.cs">
-      <DependentUpon>FSanBong.cs</DependentUpon>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
@@ -93,14 +81,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FKhachHang.resx">
-      <DependentUpon>FKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FSanBong.resx">
-      <DependentUpon>FSanBong.cs</DependentUpon>
+    <Compile Include="ucKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucKhachHang.Designer.cs">
+      <DependentUpon>ucKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSanBong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSanBong.Designer.cs">
+      <DependentUpon>ucSanBong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
@@ -115,6 +109,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucKhachHang.resx">
+      <DependentUpon>ucKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSanBong.resx">
+      <DependentUpon>ucSanBong.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,8 +132,6 @@
   <ItemGroup>
     <Content Include="Resources\San5.jpg" />
     <Content Include="Resources\San7.jpg" />
-    <Content Include="San5.jpg" />
-    <Content Include="San7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,13 +1,13 @@
 ﻿namespace QuanLySanBongMini
 {
-    partial class FSanBong
+    partial class ucSanBong
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,29 +20,16 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnTim;
             System.Windows.Forms.Button btnReload;
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.lblUserInfo = new System.Windows.Forms.Label();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnNhanVien = new System.Windows.Forms.Button();
-            this.btnHangHoa = new System.Windows.Forms.Button();
-            this.btnBanHang = new System.Windows.Forms.Button();
-            this.btnSanBong = new System.Windows.Forms.Button();
-            this.btnKhachHang = new System.Windows.Forms.Button();
-            this.btnDatSan = new System.Windows.Forms.Button();
-            this.btnHeThong = new System.Windows.Forms.Button();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pnlMainContent = new System.Windows.Forms.Panel();
+            System.Windows.Forms.Button btnTim;
             this.grbLichSu = new System.Windows.Forms.GroupBox();
             this.txtTimMPD = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,17 +63,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            btnTim = new System.Windows.Forms.Button();
             btnReload = new System.Windows.Forms.Button();
-            this.pnlSidebar.SuspendLayout();
-            this.pnlLogo.SuspendLayout();
-            this.pnlMainContent.SuspendLayout();
+            btnTim = new System.Windows.Forms.Button();
             this.grbLichSu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDatSan)).BeginInit();
             this.grbSanBong.SuspendLayout();
             this.grbThongTinSan.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnReload
+            // 
+            btnReload.Location = new System.Drawing.Point(318, 20);
+            btnReload.Name = "btnReload";
+            btnReload.Size = new System.Drawing.Size(75, 23);
+            btnReload.TabIndex = 15;
+            btnReload.Text = "Tải lại";
+            btnReload.UseVisualStyleBackColor = true;
+            btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnTim
             // 
@@ -97,216 +90,6 @@
             btnTim.Text = "Tìm";
             btnTim.UseVisualStyleBackColor = true;
             btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(0, 0);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(250, 130);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "⚽\r\nQUẢN LÝ\r\nSÂN BÓNG";
-            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlSidebar
-            // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.pnlSidebar.Controls.Add(this.lblUserInfo);
-            this.pnlSidebar.Controls.Add(this.btnThongKe);
-            this.pnlSidebar.Controls.Add(this.btnNhanVien);
-            this.pnlSidebar.Controls.Add(this.btnHangHoa);
-            this.pnlSidebar.Controls.Add(this.btnBanHang);
-            this.pnlSidebar.Controls.Add(this.btnSanBong);
-            this.pnlSidebar.Controls.Add(this.btnKhachHang);
-            this.pnlSidebar.Controls.Add(this.btnDatSan);
-            this.pnlSidebar.Controls.Add(this.btnHeThong);
-            this.pnlSidebar.Controls.Add(this.pnlLogo);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(250, 700);
-            this.pnlSidebar.TabIndex = 2;
-            // 
-            // lblUserInfo
-            // 
-            this.lblUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.lblUserInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUserInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblUserInfo.ForeColor = System.Drawing.Color.White;
-            this.lblUserInfo.Location = new System.Drawing.Point(0, 650);
-            this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(250, 50);
-            this.lblUserInfo.TabIndex = 9;
-            this.lblUserInfo.Text = "Hello, [User]";
-            this.lblUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 480);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnThongKe.Size = new System.Drawing.Size(250, 50);
-            this.btnThongKe.TabIndex = 8;
-            this.btnThongKe.Text = "📊  Thống Kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 430);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNhanVien.Size = new System.Drawing.Size(250, 50);
-            this.btnNhanVien.TabIndex = 7;
-            this.btnNhanVien.Text = "👥  Nhân Viên";
-            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanVien.UseVisualStyleBackColor = false;
-            // 
-            // btnHangHoa
-            // 
-            this.btnHangHoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnHangHoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHangHoa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHangHoa.FlatAppearance.BorderSize = 0;
-            this.btnHangHoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHangHoa.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnHangHoa.ForeColor = System.Drawing.Color.White;
-            this.btnHangHoa.Location = new System.Drawing.Point(0, 380);
-            this.btnHangHoa.Name = "btnHangHoa";
-            this.btnHangHoa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHangHoa.Size = new System.Drawing.Size(250, 50);
-            this.btnHangHoa.TabIndex = 6;
-            this.btnHangHoa.Text = "📦  Hàng Hóa";
-            this.btnHangHoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHangHoa.UseVisualStyleBackColor = false;
-            // 
-            // btnBanHang
-            // 
-            this.btnBanHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBanHang.FlatAppearance.BorderSize = 0;
-            this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBanHang.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnBanHang.ForeColor = System.Drawing.Color.White;
-            this.btnBanHang.Location = new System.Drawing.Point(0, 330);
-            this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBanHang.Size = new System.Drawing.Size(250, 50);
-            this.btnBanHang.TabIndex = 5;
-            this.btnBanHang.Text = "💰  Bán Hàng";
-            this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBanHang.UseVisualStyleBackColor = false;
-            // 
-            // btnSanBong
-            // 
-            this.btnSanBong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnSanBong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSanBong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSanBong.FlatAppearance.BorderSize = 0;
-            this.btnSanBong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSanBong.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnSanBong.ForeColor = System.Drawing.Color.White;
-            this.btnSanBong.Location = new System.Drawing.Point(0, 280);
-            this.btnSanBong.Name = "btnSanBong";
-            this.btnSanBong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSanBong.Size = new System.Drawing.Size(250, 50);
-            this.btnSanBong.TabIndex = 4;
-            this.btnSanBong.Text = "⚽  Sân Bóng";
-            this.btnSanBong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSanBong.UseVisualStyleBackColor = false;
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKhachHang.FlatAppearance.BorderSize = 0;
-            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 230);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnKhachHang.Size = new System.Drawing.Size(250, 50);
-            this.btnKhachHang.TabIndex = 3;
-            this.btnKhachHang.Text = "👤  Khách Hàng";
-            this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKhachHang.UseVisualStyleBackColor = false;
-            // 
-            // btnDatSan
-            // 
-            this.btnDatSan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnDatSan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDatSan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDatSan.FlatAppearance.BorderSize = 0;
-            this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatSan.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnDatSan.ForeColor = System.Drawing.Color.White;
-            this.btnDatSan.Location = new System.Drawing.Point(0, 180);
-            this.btnDatSan.Name = "btnDatSan";
-            this.btnDatSan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDatSan.Size = new System.Drawing.Size(250, 50);
-            this.btnDatSan.TabIndex = 2;
-            this.btnDatSan.Text = "📅  Đặt Sân";
-            this.btnDatSan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatSan.UseVisualStyleBackColor = false;
-            // 
-            // btnHeThong
-            // 
-            this.btnHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHeThong.FlatAppearance.BorderSize = 0;
-            this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 130);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHeThong.Size = new System.Drawing.Size(250, 50);
-            this.btnHeThong.TabIndex = 1;
-            this.btnHeThong.Text = "⚙️  Hệ Thống";
-            this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHeThong.UseVisualStyleBackColor = false;
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Controls.Add(this.lblLogo);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(250, 130);
-            this.pnlLogo.TabIndex = 0;
-            // 
-            // pnlMainContent
-            // 
-            this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
-            this.pnlMainContent.Controls.Add(this.grbLichSu);
-            this.pnlMainContent.Controls.Add(this.grbSanBong);
-            this.pnlMainContent.Controls.Add(this.grbThongTinSan);
-            this.pnlMainContent.Controls.Add(this.lblWelcome);
-            this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(1300, 700);
-            this.pnlMainContent.TabIndex = 3;
             // 
             // grbLichSu
             // 
@@ -320,10 +103,10 @@
             this.grbLichSu.Controls.Add(this.dtpEnd);
             this.grbLichSu.Controls.Add(this.dtpStart);
             this.grbLichSu.Controls.Add(this.dgvPhieuDatSan);
-            this.grbLichSu.Location = new System.Drawing.Point(256, 294);
+            this.grbLichSu.Location = new System.Drawing.Point(4, 317);
             this.grbLichSu.Name = "grbLichSu";
             this.grbLichSu.Size = new System.Drawing.Size(1032, 394);
-            this.grbLichSu.TabIndex = 5;
+            this.grbLichSu.TabIndex = 8;
             this.grbLichSu.TabStop = false;
             this.grbLichSu.Text = "Lịch sử phiếu đặt sân";
             // 
@@ -334,7 +117,6 @@
             this.txtTimMPD.Size = new System.Drawing.Size(124, 22);
             this.txtTimMPD.TabIndex = 14;
             this.txtTimMPD.TextChanged += new System.EventHandler(this.txtTimMPD_TextChanged);
-            this.txtTimMPD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimMPD_KeyPress);
             // 
             // label7
             // 
@@ -505,10 +287,10 @@
             // grbSanBong
             // 
             this.grbSanBong.Controls.Add(this.lvSanBong);
-            this.grbSanBong.Location = new System.Drawing.Point(734, 12);
+            this.grbSanBong.Location = new System.Drawing.Point(482, 35);
             this.grbSanBong.Name = "grbSanBong";
             this.grbSanBong.Size = new System.Drawing.Size(554, 276);
-            this.grbSanBong.TabIndex = 4;
+            this.grbSanBong.TabIndex = 7;
             this.grbSanBong.TabStop = false;
             this.grbSanBong.Text = "Sân bóng";
             // 
@@ -536,10 +318,10 @@
             this.grbThongTinSan.Controls.Add(this.label3);
             this.grbThongTinSan.Controls.Add(this.label2);
             this.grbThongTinSan.Controls.Add(this.label1);
-            this.grbThongTinSan.Location = new System.Drawing.Point(256, 12);
+            this.grbThongTinSan.Location = new System.Drawing.Point(4, 35);
             this.grbThongTinSan.Name = "grbThongTinSan";
             this.grbThongTinSan.Size = new System.Drawing.Size(471, 276);
-            this.grbThongTinSan.TabIndex = 1;
+            this.grbThongTinSan.TabIndex = 6;
             this.grbThongTinSan.TabStop = false;
             this.grbThongTinSan.Text = "Thông tin sân";
             // 
@@ -641,40 +423,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sân:";
             // 
-            // lblWelcome
-            // 
-            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(1300, 700);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnReload
-            // 
-            btnReload.Location = new System.Drawing.Point(318, 20);
-            btnReload.Name = "btnReload";
-            btnReload.Size = new System.Drawing.Size(75, 23);
-            btnReload.TabIndex = 15;
-            btnReload.Text = "Tải lại";
-            btnReload.UseVisualStyleBackColor = true;
-            btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // FSanBong
+            // ucSanBong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 700);
-            this.Controls.Add(this.pnlSidebar);
-            this.Controls.Add(this.pnlMainContent);
-            this.Name = "FSanBong";
-            this.Text = "FSanBong";
-            this.Load += new System.EventHandler(this.FSanBong_Load);
-            this.pnlSidebar.ResumeLayout(false);
-            this.pnlLogo.ResumeLayout(false);
-            this.pnlMainContent.ResumeLayout(false);
+            this.Controls.Add(this.grbLichSu);
+            this.Controls.Add(this.grbSanBong);
+            this.Controls.Add(this.grbThongTinSan);
+            this.Name = "ucSanBong";
+            this.Size = new System.Drawing.Size(1040, 747);
+            this.Load += new System.EventHandler(this.ucSanBong_Load);
             this.grbLichSu.ResumeLayout(false);
             this.grbLichSu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuDatSan)).EndInit();
@@ -687,42 +445,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblLogo;
-        private System.Windows.Forms.Panel pnlSidebar;
-        private System.Windows.Forms.Label lblUserInfo;
-        private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnNhanVien;
-        private System.Windows.Forms.Button btnHangHoa;
-        private System.Windows.Forms.Button btnBanHang;
-        private System.Windows.Forms.Button btnSanBong;
-        private System.Windows.Forms.Button btnKhachHang;
-        private System.Windows.Forms.Button btnDatSan;
-        private System.Windows.Forms.Button btnHeThong;
-        private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.Panel pnlMainContent;
-        private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.GroupBox grbThongTinSan;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
-        private System.Windows.Forms.ComboBox cbbLoaiSan;
-        private System.Windows.Forms.TextBox txtTenSan;
-        private System.Windows.Forms.TextBox txtMaSan;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grbSanBong;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbLichSu;
-        private System.Windows.Forms.DataGridView dgvPhieuDatSan;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpEnd;
-        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.TextBox txtTimMPD;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DataGridView dgvPhieuDatSan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -733,6 +464,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.GroupBox grbSanBong;
         private System.Windows.Forms.ListView lvSanBong;
+        private System.Windows.Forms.GroupBox grbThongTinSan;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.ComboBox cbbTinhTrang;
+        private System.Windows.Forms.ComboBox cbbLoaiSan;
+        private System.Windows.Forms.TextBox txtTenSan;
+        private System.Windows.Forms.TextBox txtMaSan;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

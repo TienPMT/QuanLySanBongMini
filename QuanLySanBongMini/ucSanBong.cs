@@ -17,17 +17,17 @@ using System.Xml.Linq;
 
 namespace QuanLySanBongMini
 {
-    public partial class FSanBong : Form
+    public partial class ucSanBong : UserControl
     {
         //khởi tạo biến lock semaphore
-        SemaphoreSlim _lock = new SemaphoreSlim(1,1);
+        SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
         //Khởi tạo biến chứa ảnh của sân 5 và sân 7
         static int thumbWidth = 100;
         static int thumbHeight = 70;
         ImageList imglst = new ImageList();
 
-        public FSanBong()
+        public ucSanBong()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace QuanLySanBongMini
                 List<SanBong> sanBongs = await db.SanBongs.
                     Where(s => s.maloai == maloai).
                     ToListAsync();
-                int quantity = sanBongs.Count+1;
+                int quantity = sanBongs.Count + 1;
 
                 if (quantity > 10)
                 {
@@ -51,7 +51,7 @@ namespace QuanLySanBongMini
                 {
                     masan += "0" + quantity.ToString();
                 }
-                if(await db.SanBongs.FirstOrDefaultAsync(s=>s.masan==masan) != null)
+                if (await db.SanBongs.FirstOrDefaultAsync(s => s.masan == masan) != null)
                 {
                     masan = "SAN-00";
                 }
@@ -89,9 +89,9 @@ namespace QuanLySanBongMini
             return (tensan, maloai, tinhtrang, isvalid);
         }
 
-        private async void FSanBong_Load(object sender, EventArgs e)
+        private async void ucSanBong_Load(object sender, EventArgs e)
         {
-            using (var db  = new QL_SANBONG_MINIDatacontext())
+            using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.ToListAsync();
                 Load_PhieuDatSan(phieuDatSans);
@@ -102,11 +102,12 @@ namespace QuanLySanBongMini
             Load_Image();
             Load_SanBong();
         }
+        
 
         private void Load_PhieuDatSan(List<PhieuDatSan> phieuDatSans)
         {
             txtMaSan.Enabled = false;
-            phieuDatSans.OrderByDescending(s => s.thoigianbatdau);
+            phieuDatSans.OrderByDescending(s => s.thoigianbatdau).ToList();
             dgvPhieuDatSan.AutoGenerateColumns = false;
             dgvPhieuDatSan.DataSource = phieuDatSans;
         }
@@ -114,10 +115,10 @@ namespace QuanLySanBongMini
         private async Task LoadCombobox_LoaiSan()
         {
             cbbLoaiSan.Items.Clear();
-            using(var db = new QL_SANBONG_MINIDatacontext())
+            using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<LoaiSan> ls = await db.LoaiSans.ToListAsync();
-                foreach(LoaiSan l in ls)
+                foreach (LoaiSan l in ls)
                 {
                     cbbLoaiSan.Items.Add(l);
                 }
@@ -219,7 +220,7 @@ namespace QuanLySanBongMini
                 else
                 {
                     int key = int.Parse(keyword);
-                    List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.Where(p=>p.maphieu == key).ToListAsync();
+                    List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.Where(p => p.maphieu == key).ToListAsync();
                     Load_PhieuDatSan(phieuDatSans);
                 }
             }
@@ -254,13 +255,13 @@ namespace QuanLySanBongMini
             DateTime end = DateTime.Now;
             start = dtpStart.Value;
             end = dtpEnd.Value;
-            if(start > end)
+            if (start > end)
             {
                 MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
                 return;
             }
 
-            using(var db = new QL_SANBONG_MINIDatacontext())
+            using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.
                     Where(p => p.thoigianbatdau >= start && p.thoigiancaidat <= end).
@@ -278,9 +279,9 @@ namespace QuanLySanBongMini
             }
             string masanmoi = await TaoMaSan(input.maloai);
 
-            using(var db = new QL_SANBONG_MINIDatacontext())
+            using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                if(await db.SanBongs.FirstOrDefaultAsync(s=>s.masan == masanmoi) != null)
+                if (await db.SanBongs.FirstOrDefaultAsync(s => s.masan == masanmoi) != null)
                 {
                     MessageBox.Show("Mã sân đã tồn tại");
                     return;
@@ -329,7 +330,7 @@ namespace QuanLySanBongMini
                 return;
             }
 
-            
+
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 SanBong updatedSan = await db.SanBongs.FirstOrDefaultAsync(s => s.masan == masan);
@@ -383,8 +384,8 @@ namespace QuanLySanBongMini
 
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                SanBong sanBong = await db.SanBongs.FirstOrDefaultAsync(s=>s.masan == masan);
-                if(sanBong == null)
+                SanBong sanBong = await db.SanBongs.FirstOrDefaultAsync(s => s.masan == masan);
+                if (sanBong == null)
                 {
                     MessageBox.Show("Sân không tồn tại");
                     return;
@@ -466,5 +467,6 @@ namespace QuanLySanBongMini
                 Load_PhieuDatSan(phieuDatSans);
             }
         }
+
     }
 }

@@ -32,5 +32,5 @@ C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBon
 C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySa.EE94099F.Up2Date
 C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.exe
 C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.pdb
-C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.FKhachHang.resources
-C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.FSanBong.resources
+C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.ucKhachHang.resources
+C:\Users\User\OneDrive\Documents\2025_2026\HKI_Nam_3\CongNgheDotNet\QuanLySanBongMini\QuanLySanBongMini\obj\Debug\QuanLySanBongMini.ucSanBong.resources

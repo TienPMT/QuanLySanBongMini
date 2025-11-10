@@ -14,28 +14,28 @@ using System.Windows.Forms;
 
 namespace QuanLySanBongMini
 {
-    public partial class FKhachHang : Form
+    public partial class ucKhachHang : UserControl
     {
-        SemaphoreSlim _lock = new SemaphoreSlim(1,1);
-        public FKhachHang()
+        SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
+        public ucKhachHang()
         {
             InitializeComponent();
         }
 
-        private (string makh, string tenkh, string gioitinh, string  sdt, bool isValid) getInput()
+        private (string makh, string tenkh, string gioitinh, string sdt, bool isValid) getInput()
         {
             string makh = txtMaKH.Text;
             string tenkh = txtTenKH.Text;
             string gioitinh = "";
             bool isValid = true;
             List<RadioButton> rad = grbThongTin.Controls.OfType<RadioButton>().Where(x => x.Checked).ToList();
-            foreach(RadioButton radItem in rad)
+            foreach (RadioButton radItem in rad)
             {
-                if(radItem == rdbNam)
+                if (radItem == rdbNam)
                 {
                     gioitinh = "Nam";
                 }
-                if(radItem == rdbNu)
+                if (radItem == rdbNu)
                 {
                     gioitinh = "Nữ";
                 }
@@ -59,11 +59,21 @@ namespace QuanLySanBongMini
             return (makh, tenkh, gioitinh, sdt, isValid);
         }
 
+        private async void ucKhachHang_Load(object sender, EventArgs e)
+        {
+            using (var db = new QL_SANBONG_MINIDatacontext())
+            {
+                List<KhachHang> khachHangs = await db.KhachHangs.ToListAsync();
+                Load_Datagridview(khachHangs);
+            }
+            txtMaKH.Enabled = false;
+            ClearForm();
+        }
         private async void FKhachHang_Load(object sender, EventArgs e)
         {
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                List<KhachHang> khachHangs =  await db.KhachHangs.ToListAsync();
+                List<KhachHang> khachHangs = await db.KhachHangs.ToListAsync();
                 Load_Datagridview(khachHangs);
             }
             txtMaKH.Enabled = false;
@@ -77,7 +87,7 @@ namespace QuanLySanBongMini
         }
         private async Task<string> TaoMaKH()
         {
-            using (var db =new QL_SANBONG_MINIDatacontext())
+            using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<KhachHang> khachHangs = await db.KhachHangs.ToListAsync();
                 int quantity = khachHangs.Count() + 1;
@@ -86,7 +96,7 @@ namespace QuanLySanBongMini
                 {
                     return maKH;
                 }
-                for(int i = 0; i <= quantity; i++)
+                for (int i = 0; i <= quantity; i++)
                 {
                     maKH = "KH" + i.ToString();
                     if (khachHangs.FirstOrDefault(kh => kh.makh == maKH) == null)
@@ -107,17 +117,7 @@ namespace QuanLySanBongMini
         }
         private void ValidateTextChanged(object sender, EventArgs e)
         {
-            TextBox txtBox = sender as TextBox;
-            string currentText = txtBox.Text;
-            int currentCursorPos = txtBox.SelectionStart;
-            string onlyDigitText = new string(
-                currentText.Where(c => char.IsDigit(c)).ToArray()
-                );
-            if (onlyDigitText != currentText)
-            {
-                txtBox.Text = onlyDigitText;
-                txtBox.SelectionStart = Math.Min(currentCursorPos, onlyDigitText.Length);
-            }
+
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -174,12 +174,12 @@ namespace QuanLySanBongMini
             input.makh = await TaoMaKH();
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                if(await db.KhachHangs.FirstOrDefaultAsync(k=>k.SDT == input.sdt) != null)
+                if (await db.KhachHangs.FirstOrDefaultAsync(k => k.SDT == input.sdt) != null)
                 {
                     MessageBox.Show("Số điện thoại khách hàng bị trùng");
                     return;
                 }
-                else if(await db.KhachHangs.FirstOrDefaultAsync(k=>k.makh==input.makh) != null)
+                else if (await db.KhachHangs.FirstOrDefaultAsync(k => k.makh == input.makh) != null)
                 {
                     MessageBox.Show("Mã khách hàng bị trùng");
                     return;
@@ -192,7 +192,7 @@ namespace QuanLySanBongMini
                     SDT = input.sdt
                 };
 
-                await  _lock.WaitAsync();
+                await _lock.WaitAsync();
                 try
                 {
                     db.KhachHangs.Add(kh);
@@ -227,7 +227,7 @@ namespace QuanLySanBongMini
                     MessageBox.Show("Mã khách hàng không tồn tại");
                     return;
                 }
-                else if(await db.KhachHangs.FirstOrDefaultAsync(k => k.SDT == input.sdt && k.makh != updatedkh.makh) != null)
+                else if (await db.KhachHangs.FirstOrDefaultAsync(k => k.SDT == input.sdt && k.makh != updatedkh.makh) != null)
                 {
                     MessageBox.Show("Số điện thoại khách hàng đã tồn tại");
                     return;
@@ -303,7 +303,7 @@ namespace QuanLySanBongMini
                 }
                 else
                 {
-                    List<KhachHang> khachHangs = await db.KhachHangs.Where(k=>k.SDT.Contains(keyword)).ToListAsync();
+                    List<KhachHang> khachHangs = await db.KhachHangs.Where(k => k.SDT.Contains(keyword)).ToListAsync();
                     Load_Datagridview(khachHangs);
                 }
             }
@@ -323,7 +323,7 @@ namespace QuanLySanBongMini
             string currentText = txtBox.Text;
             int currentCursorPos = txtBox.SelectionStart;
             string onlyLetterText = new string(
-                currentText.Where(l => char.IsLetter(l)).ToArray()
+                currentText.Where(l => char.IsLetter(l) || char.IsWhiteSpace(l)).ToArray()
                 );
             if (onlyLetterText != currentText)
             {
@@ -331,5 +331,6 @@ namespace QuanLySanBongMini
                 txtBox.SelectionStart = Math.Min(currentCursorPos, onlyLetterText.Length);
             }
         }
+
     }
 }
