@@ -97,9 +97,5 @@ namespace QuanLySanBongMini
             // Logic sẽ thêm ở giai đoạn 2
         }
 
-        private void Main_Form_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

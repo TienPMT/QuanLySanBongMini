@@ -73,7 +73,7 @@
             // 
             // btnReload
             // 
-            btnReload.Location = new System.Drawing.Point(318, 20);
+            btnReload.Location = new System.Drawing.Point(561, 21);
             btnReload.Name = "btnReload";
             btnReload.Size = new System.Drawing.Size(75, 23);
             btnReload.TabIndex = 15;
@@ -83,7 +83,7 @@
             // 
             // btnTim
             // 
-            btnTim.Location = new System.Drawing.Point(237, 20);
+            btnTim.Location = new System.Drawing.Point(360, 21);
             btnTim.Name = "btnTim";
             btnTim.Size = new System.Drawing.Size(75, 23);
             btnTim.TabIndex = 12;
@@ -105,7 +105,7 @@
             this.grbLichSu.Controls.Add(this.dgvPhieuDatSan);
             this.grbLichSu.Location = new System.Drawing.Point(4, 317);
             this.grbLichSu.Name = "grbLichSu";
-            this.grbLichSu.Size = new System.Drawing.Size(1032, 394);
+            this.grbLichSu.Size = new System.Drawing.Size(1311, 394);
             this.grbLichSu.TabIndex = 8;
             this.grbLichSu.TabStop = false;
             this.grbLichSu.Text = "Lịch sử phiếu đặt sân";
@@ -114,7 +114,7 @@
             // 
             this.txtTimMPD.Location = new System.Drawing.Point(107, 21);
             this.txtTimMPD.Name = "txtTimMPD";
-            this.txtTimMPD.Size = new System.Drawing.Size(124, 22);
+            this.txtTimMPD.Size = new System.Drawing.Size(247, 22);
             this.txtTimMPD.TabIndex = 14;
             this.txtTimMPD.TextChanged += new System.EventHandler(this.txtTimMPD_TextChanged);
             // 
@@ -129,7 +129,7 @@
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(951, 20);
+            this.btnLoc.Location = new System.Drawing.Point(1230, 21);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(75, 23);
             this.btnLoc.TabIndex = 11;
@@ -140,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(699, 24);
+            this.label6.Location = new System.Drawing.Point(981, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 16);
             this.label6.TabIndex = 4;
@@ -149,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(429, 25);
+            this.label5.Location = new System.Drawing.Point(725, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 16);
             this.label5.TabIndex = 3;
@@ -158,7 +158,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(832, 22);
+            this.dtpEnd.Location = new System.Drawing.Point(1111, 21);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(113, 22);
             this.dtpEnd.TabIndex = 2;
@@ -166,7 +166,7 @@
             // dtpStart
             // 
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(562, 21);
+            this.dtpStart.Location = new System.Drawing.Point(858, 21);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(113, 22);
             this.dtpStart.TabIndex = 1;
@@ -191,7 +191,7 @@
             this.dgvPhieuDatSan.ReadOnly = true;
             this.dgvPhieuDatSan.RowHeadersWidth = 51;
             this.dgvPhieuDatSan.RowTemplate.Height = 24;
-            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1031, 345);
+            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1310, 345);
             this.dgvPhieuDatSan.TabIndex = 0;
             // 
             // Column1
@@ -431,7 +431,7 @@
             this.Controls.Add(this.grbSanBong);
             this.Controls.Add(this.grbThongTinSan);
             this.Name = "ucSanBong";
-            this.Size = new System.Drawing.Size(1040, 747);
+            this.Size = new System.Drawing.Size(1318, 747);
             this.Load += new System.EventHandler(this.ucSanBong_Load);
             this.grbLichSu.ResumeLayout(false);
             this.grbLichSu.PerformLayout();

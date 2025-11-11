@@ -271,7 +271,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sân Bóng Mini - Hệ Thống Chính";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.ResumeLayout(false);
