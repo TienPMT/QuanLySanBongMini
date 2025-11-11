@@ -1,0 +1,204 @@
+﻿using QuanLySanBongMini.Database;
+using QuanLySanBongMini.Database.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Entity;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QuanLySanBongMini
+{
+    public partial class Main_Form : Form
+    {
+        private Button currentActiveButton = null;
+        private string manv_logged;
+
+        public Main_Form(string MaNhanVien)
+        {
+            InitializeComponent();
+            this.manv_logged = MaNhanVien;
+            // Set default active button
+            SetActiveButton(btnHeThong);
+        }
+
+        // Method to handle button active state
+        private void SetActiveButton(Button button)
+        {
+            if (currentActiveButton != null)
+            {
+                currentActiveButton.BackColor = Color.FromArgb(230, 126, 34);
+                currentActiveButton.ForeColor = Color.White;
+            }
+
+            currentActiveButton = button;
+            button.BackColor = Color.FromArgb(211, 84, 0);
+            button.ForeColor = Color.White;
+        }
+
+        // Event handlers for menu buttons
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnHeThong);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnDatSan_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnDatSan);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnKhachHang);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnSanBong_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnSanBong);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnBanHang);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnHangHoa_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnHangHoa);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnNhanVien);
+
+            ucNhanVien uc = new ucNhanVien();
+            loadUserControl(uc);
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnThongKe);
+            // Logic sẽ thêm ở giai đoạn 2
+        }
+
+        public async void Main_Form_Load(object sender, EventArgs e)
+        {
+            ucMainForm uc = new ucMainForm();
+            loadUserControl(uc);
+
+            using (var db = new QL_SANBONG_MINIDatacontext())
+            {
+                Database.Entities.NhanVien user = await db.NhanViens.Where(nv => nv.manv == this.manv_logged).FirstOrDefaultAsync();
+
+                if (user == null)
+                {
+                    MessageBox.Show("Lỗi không tìm thấy user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Hiển thị tên user
+                lblUserInfo.Text = "Hello, " + user.hoten;
+
+                // Kiểm tra xem user là nhân viên hay quản lý
+                if (user.macv == 2) // Nhân viên
+                {
+                    // Ẩn chức năng xem thống kê và quản lý nhân viên
+                    btnNhanVien.Visible = false;
+                    btnThongKe.Visible = false;
+                }    
+            }
+        }
+
+        /// <summary>
+        /// Load UserControl vào panel chính với 3 chế độ layout
+        /// </summary>
+        /// <param name="uc">UserControl cần load</param>
+        /// <param name="layoutMode">
+        /// "Fill" - Lấp đầy toàn bộ (mặc định)
+        /// "Center" - Căn giữa với kích thước cố định
+        /// "CenterWithPadding" - Căn giữa với padding xung quanh
+        /// </param>
+        private void loadUserControl(UserControl uc, string layoutMode = "Fill")
+        {
+            pnlMainContent.Controls.Clear();
+
+            switch (layoutMode)
+            {
+                case "Fill":
+                    // Chế độ 1: Lấp đầy toàn bộ panel (Responsive 100%)
+                    uc.Dock = DockStyle.Fill;
+                    pnlMainContent.Controls.Add(uc);
+                    break;
+
+                case "Center":
+                    // Chế độ 2: Căn giữa với kích thước cố định
+                    uc.Anchor = AnchorStyles.None;
+                    uc.Location = new Point(
+                        (pnlMainContent.Width - uc.Width) / 2,
+                        (pnlMainContent.Height - uc.Height) / 2
+                    );
+                    pnlMainContent.Controls.Add(uc);
+                    
+                    // Đăng ký event để tự động căn giữa khi resize
+                    pnlMainContent.Resize += (s, e) =>
+                    {
+                        uc.Location = new Point(
+                            (pnlMainContent.Width - uc.Width) / 2,
+                            (pnlMainContent.Height - uc.Height) / 2
+                        );
+                    };
+                    break;
+
+                case "CenterWithPadding":
+                    // Chế độ 3: Căn giữa với TableLayoutPanel (Chuyên nghiệp nhất)
+                    TableLayoutPanel tableLayout = new TableLayoutPanel
+                    {
+                        Dock = DockStyle.Fill,
+                        ColumnCount = 3,
+                        RowCount = 3,
+                        BackColor = pnlMainContent.BackColor
+                    };
+
+                    // Cấu hình 3 cột: 10% - 80% - 10%
+                    tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+                    tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+                    tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+
+                    // Cấu hình 3 hàng: 10% - 80% - 10%
+                    tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+                    tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+                    tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+
+                    // Đặt UserControl vào ô giữa (hàng 1, cột 1)
+                    uc.Dock = DockStyle.Fill;
+                    tableLayout.Controls.Add(uc, 1, 1);
+
+                    pnlMainContent.Controls.Add(tableLayout);
+                    break;
+
+                default:
+                    // Mặc định: Fill
+                    uc.Dock = DockStyle.Fill;
+                    pnlMainContent.Controls.Add(uc);
+                    break;
+            }
+
+            uc.BringToFront();
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}

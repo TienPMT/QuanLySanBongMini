@@ -1,7 +1,10 @@
-﻿using System;
+﻿using QuanLySanBongMini.Database;
+using QuanLySanBongMini.Database.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,9 +17,12 @@ namespace QuanLySanBongMini
     {
         private Button currentActiveButton = null;
 
-        public Main_Form()
+        private string manv_logged;
+
+        public Main_Form(string MaNhanVien)
         {
             InitializeComponent();
+            this.manv_logged = MaNhanVien;
             // Set default active button
             SetActiveButton(btnHeThong);
         }
@@ -75,7 +81,9 @@ namespace QuanLySanBongMini
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnNhanVien);
-            // Logic sẽ thêm ở giai đoạn 2
+
+            ucNhanVien uc = new ucNhanVien();
+            loadUserControl(uc);
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -84,5 +92,41 @@ namespace QuanLySanBongMini
             // Logic sẽ thêm ở giai đoạn 2
         }
 
+        public async void Main_Form_Load(object sender, EventArgs e)
+        {
+            using (var db = new QL_SANBONG_MINIDatacontext())
+            {
+                NhanVien user = await db.NhanViens.Where(nv => nv.manv == this.manv_logged).FirstOrDefaultAsync();
+
+                if (user == null)
+                {
+                    MessageBox.Show("Lỗi không tìm thấy user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Hiển thị tên user
+                lblUserInfo.Text = "Hello, " + user.hoten;
+
+                // Kiểm tra xem user là nhân viên hay quản lý
+                if (user.macv == 2) // Nhân viên
+                {
+                    // Ẩn chức năng xem thống kê và quản lý nhân viên
+                    btnNhanVien.Visible = false;
+                    btnThongKe.Visible = false;
+                }    
+            }
+        }
+
+        private void loadUserControl(UserControl uc)
+        {
+            pnlMainContent.Controls.Clear();
+
+            pnlMainContent.Controls.Add(uc);
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -37,14 +37,18 @@
             this.btnSanBong = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnDatSan = new System.Windows.Forms.Button();
+            this.btnHeThong = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnHeThong = new System.Windows.Forms.Button();
+            this.pnlWelcome = new System.Windows.Forms.Panel();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
+            this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
+            this.pnlWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -212,6 +216,25 @@
             this.btnDatSan.UseVisualStyleBackColor = false;
             this.btnDatSan.Click += new System.EventHandler(this.btnDatSan_Click);
             // 
+            // btnHeThong
+            // 
+            this.btnHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHeThong.FlatAppearance.BorderSize = 0;
+            this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btnHeThong.ForeColor = System.Drawing.Color.White;
+            this.btnHeThong.Location = new System.Drawing.Point(0, 130);
+            this.btnHeThong.Name = "btnHeThong";
+            this.btnHeThong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnHeThong.Size = new System.Drawing.Size(250, 50);
+            this.btnHeThong.TabIndex = 1;
+            this.btnHeThong.Text = "⚙️  Hệ Thống";
+            this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHeThong.UseVisualStyleBackColor = false;
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
+            // 
             // pnlLogo
             // 
             this.pnlLogo.Controls.Add(this.lblLogo);
@@ -235,44 +258,63 @@
             // 
             // pnlMainContent
             // 
-            this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
-            this.pnlMainContent.Controls.Add(this.lblWelcome);
+            this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.pnlMainContent.Controls.Add(this.pnlWelcome);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(250, 0);
             this.pnlMainContent.Name = "pnlMainContent";
+            this.pnlMainContent.Padding = new System.Windows.Forms.Padding(30);
             this.pnlMainContent.Size = new System.Drawing.Size(1050, 700);
             this.pnlMainContent.TabIndex = 1;
             // 
-            // lblWelcome
+            // pnlWelcome
             // 
-            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(1050, 700);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "⚽\r\n\r\nCHÀO MỪNG ĐÃ ĐẾN VỚI\r\nHỆ THỐNG QUẢN LÝ SÂN BÓNG MINI";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlWelcome.BackColor = System.Drawing.Color.White;
+            this.pnlWelcome.Controls.Add(this.lblDateTime);
+            this.pnlWelcome.Controls.Add(this.lblWelcomeMessage);
+            this.pnlWelcome.Controls.Add(this.lblWelcomeTitle);
+            this.pnlWelcome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlWelcome.Location = new System.Drawing.Point(30, 30);
+            this.pnlWelcome.Name = "pnlWelcome";
+            this.pnlWelcome.Size = new System.Drawing.Size(990, 200);
+            this.pnlWelcome.TabIndex = 0;
             // 
-            // btnHeThong
+            // lblDateTime
             // 
-            this.btnHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHeThong.FlatAppearance.BorderSize = 0;
-            this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 130);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHeThong.Size = new System.Drawing.Size(250, 50);
-            this.btnHeThong.TabIndex = 1;
-            this.btnHeThong.Text = "⚙️  Hệ Thống";
-            this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHeThong.UseVisualStyleBackColor = false;
-            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
+            this.lblDateTime.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblDateTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.lblDateTime.Location = new System.Drawing.Point(0, 160);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(990, 40);
+            this.lblDateTime.TabIndex = 2;
+            this.lblDateTime.Text = "🕐 Thứ Hai, 01 Tháng 01, 2024 - 08:00 AM";
+            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWelcomeMessage
+            // 
+            this.lblWelcomeMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblWelcomeMessage.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lblWelcomeMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(0, 70);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(990, 80);
+            this.lblWelcomeMessage.TabIndex = 1;
+            this.lblWelcomeMessage.Text = "Chúc bạn một ngày làm việc hiệu quả!\r\nHãy chọn chức năng từ menu bên trái để bắt" +
+    " đầu.";
+            this.lblWelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWelcomeTitle
+            // 
+            this.lblWelcomeTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblWelcomeTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.lblWelcomeTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.lblWelcomeTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblWelcomeTitle.Name = "lblWelcomeTitle";
+            this.lblWelcomeTitle.Size = new System.Drawing.Size(990, 70);
+            this.lblWelcomeTitle.TabIndex = 0;
+            this.lblWelcomeTitle.Text = "👋 Xin chào, [Tên Nhân Viên]!
+            this.lblWelcomeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main_Form
             // 
@@ -286,9 +328,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sân Bóng Mini - Hệ Thống Chính";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.pnlMainContent.ResumeLayout(false);
+            this.pnlWelcome.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -306,9 +351,12 @@
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Label lblUserInfo;
-        private System.Windows.Forms.Panel pnlMainContent;
-        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnHeThong;
+        private System.Windows.Forms.Panel pnlMainContent;
+        private System.Windows.Forms.Panel pnlWelcome;
+        private System.Windows.Forms.Label lblWelcomeTitle;
+        private System.Windows.Forms.Label lblWelcomeMessage;
+        private System.Windows.Forms.Label lblDateTime;
     }
 }
 
