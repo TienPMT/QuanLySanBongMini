@@ -88,12 +88,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyNhanVienReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyNhanVienReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ucMainForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,10 +115,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyNhanVienReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuanLyNhanVienReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucMainForm.resx">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </EmbeddedResource>

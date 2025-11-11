@@ -7,20 +7,12 @@
       "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\ucnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\quanlysanbongmini\\ucnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\ucnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\quanlynhanvienreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
-      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\quanlynhanvienreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\ucmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\ucmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\quanlysanbongmini\\dtos\\nhanviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\dtos\\nhanviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +22,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NhanVienDTO.cs",
+              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\DTOs\\NhanVienDTO.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\DTOs\\NhanVienDTO.cs",
+              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\DTOs\\NhanVienDTO.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\DTOs\\NhanVienDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T05:30:41.803Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,57 +47,21 @@
               "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\ucNhanVien.cs [Design]",
               "RelativeToolTip": "QuanLySanBongMini\\ucNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T04:16:50.694Z",
+              "WhenOpened": "2025-11-11T10:11:19.926Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dashboard.cs",
-              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Dashboard.cs",
-              "RelativeDocumentMoniker": "QuanLySanBongMini\\Dashboard.cs",
-              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Dashboard.cs",
-              "RelativeToolTip": "QuanLySanBongMini\\Dashboard.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAmwI0AAAAgAAAAAAAAAA==",
+              "Title": "ucNhanVien.cs",
+              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\ucNhanVien.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ucNhanVien.cs",
+              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\ucNhanVien.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ucNhanVien.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAADEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T00:59:25.201Z",
+              "WhenOpened": "2025-11-11T04:54:08.994Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dashboard.cs [Design]",
-              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Dashboard.cs",
-              "RelativeDocumentMoniker": "QuanLySanBongMini\\Dashboard.cs",
-              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Dashboard.cs [Design]",
-              "RelativeToolTip": "QuanLySanBongMini\\Dashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T00:59:15.651Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "QuanLyNhanVienReport.rpt",
-              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\QuanLyNhanVienReport.rpt",
-              "RelativeDocumentMoniker": "QuanLySanBongMini\\QuanLyNhanVienReport.rpt",
-              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\QuanLyNhanVienReport.rpt",
-              "RelativeToolTip": "QuanLySanBongMini\\QuanLyNhanVienReport.rpt",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPdSURBVDhPrZRbaBxVGMf/c9nd2Vuyu9nN5m7aStI2oWtSCBgtWgj10oe2D2Le1FRRBBEk\u002BCJo8amIIL5U0BfFF6mFalOs0CdrWqhJNkmTUEyyzaXuJpvsdXZ2dnauntmdbJvEvvkb/pxvZr7vP\u002Bec\u002BTj4XzEMg7LCCj39z7/y6vC7n1m3T2RtaWHi8ncXP7Bud8FaYwVPnS94pPeZgcihIBiGBkWuvfyzXcC0P9SsKrJ08\u002Br3XxbymaT1qgJjjRXaOrsiz518\u002BdyJSCv8Xid8HgcCXo7Ej1QQZciGrf7EswN9W\u002BlMLpva3hCLfNayAG2NNcw50RSFYklBtiAhs0diWYXXZcfxo23O4fMfXewbHHrNWx8IV6v/w7AGcSa\u002B\u002B0VebeVEXBuPgSezPT383qdDZ98YrRY9YYYmDKlm6KpkWsLvxhg2qTjaw14M9rRg4EgTBntbcKCtwel2OzmrbLchRUxoYmBe5kjTNAS6gHvGLK4LV/FD/lssUBMIB9xosuThbOSjj2z2GJr7txNTyGgpLGl/Y5G6j/viPH4VruAX4WfMKzOVD5qzN/Meh2ZcjRxRHZGPste7dIOGphuQjCKiUhTjpXFojAyH7oCmabjJ38Cl9FfIKCkYlLbPkG0\u002Bc/lFQI\u002BQOEg1cpGlDYP8TQVjxetYLi9DhYZcKYdCloeqqSQViKYn8f7GCL4\u002BdolsjrPqZMF\u002B8\u002BExV1lRfGleaY5tlP0zqzIu/JQC6\u002BtCOryCXDgKw6OD1hhIs2WU4xI6mjsx\u002BvrHaORCyFCCZVWFVgtri7qw/mebt3Br4BC73NPBIZGWEVsM4uFsL9KrByGyAkkkWxFX0cf24/zRt/FC6CQ8Ns\u002B\u002BJTM5tX47OrOwSp6vdbb6Q4c73Kc4O4tYUkN6MwRKDsLuT0HMJ/CU1I43B0bw1tBIxcjUZlpAdGpqYvavWzcqhrH524jN39FFxVZk65qebm1uOHeqP4BkXsc2r0NM\u002BWE8OAy7L4rPX/oEZyJnwZI22WmvZKaE6ejkxPTdqmGtbebu/oa529dgt7FwO\u002B3obnGgI2iDi2PgdzRg9MAFdLl6YZBcilSZKzXbj5whtVYzqRlKRR6lYp4kUzBbJ1cCNFJZ72Hhd9sRtIXB6nboul5b7uPaoWZoompAtghMLEuIZwxyhDFoD9LoDqvI8SISKQFxcnytb/E1lWS1cpjssOs8pGiGVw37yty61Ej\u002BC9cZouBlVTHoKKTWE7liOsvL0EpaucSbK6\u002BR2kqsWeFuw5YAN336eOCLsqK\u002BIxSl7rwgI54UZhaWtn9cXElOKqr28N6dMX7qjyuKVbIH4F/CwpxOdjf1iQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-11-11T00:29:03.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ucMainForm.cs [Design]",
-              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\ucMainForm.cs",
-              "RelativeDocumentMoniker": "QuanLySanBongMini\\ucMainForm.cs",
-              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\ucMainForm.cs [Design]",
-              "RelativeToolTip": "QuanLySanBongMini\\ucMainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T00:58:25.887Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

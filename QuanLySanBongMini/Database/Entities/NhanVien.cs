@@ -20,8 +20,17 @@ namespace QuanLySanBongMini.Database.Entities
         [Column("GIOITINH")]
         public string gioitinh { get; set; }
 
+        [Column("NGAYSINH")]
+        public DateTime ngaysinh { get; set; }
+
         [Column("SDT")]
         public string sdt { get; set;  }
+
+        [Column("LUONG_CO_BAN")]
+        public decimal luongcb { get; set;  }
+
+        [Column("EMAIL")]
+        public string email { get; set;  }
 
         [Column("MACV"), ForeignKey("tencv")]
         public int macv { get; set; }

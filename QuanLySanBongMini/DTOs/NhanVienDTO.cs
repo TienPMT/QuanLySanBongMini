@@ -11,7 +11,11 @@ namespace QuanLySanBongMini.DTOs
         public string MaNhanVien { get; set; }
         public string HoTenNhanVien { get; set;  }
         public string GioiTinh { get; set;  }
+
+        public DateTime NgaySinh { get; set; }
         public string SDT { get; set;  }
+        public decimal LuongCB { get; set;  }
+        public string Email { get; set;  }
         public string ChucVu { get; set;  }
     }
 }
