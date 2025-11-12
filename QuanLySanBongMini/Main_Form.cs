@@ -17,6 +17,7 @@ namespace QuanLySanBongMini
         //Khởi tạo uc
         ucKhachHang UIKhachHang = new ucKhachHang();
         ucSanBong UISanBong = new ucSanBong();
+        ucDatSan UIDatSan = new ucDatSan();
 
         public Main_Form()
         {
@@ -57,6 +58,7 @@ namespace QuanLySanBongMini
         {
             SetActiveButton(btnDatSan);
             // Logic sẽ thêm ở giai đoạn 2
+            loadUserControl(UIDatSan);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
