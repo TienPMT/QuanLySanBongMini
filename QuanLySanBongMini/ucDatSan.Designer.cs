@@ -172,6 +172,7 @@
             this.btnCapNhat.TabIndex = 20;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -450,7 +451,7 @@
             this.dgvPhieuDatSan.ReadOnly = true;
             this.dgvPhieuDatSan.RowHeadersWidth = 51;
             this.dgvPhieuDatSan.RowTemplate.Height = 24;
-            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1040, 393);
+            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1040, 384);
             this.dgvPhieuDatSan.TabIndex = 0;
             this.dgvPhieuDatSan.SelectionChanged += new System.EventHandler(this.dgvPhieuDatSan_SelectionChanged);
             this.dgvPhieuDatSan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvPhieuDatSan_KeyPress);

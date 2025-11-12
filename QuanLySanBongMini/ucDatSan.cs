@@ -34,7 +34,7 @@ namespace QuanLySanBongMini
             InitializeComponent();
         }
 
-        private async Task<(string makh, string masan,DateTime ngaydat, 
+        private async Task<(string makh, string masan,DateTime ngaybatdau, 
             DateTime ngayhientai, DateTime ngaycaidat, int thoigianchoi, double tongtien,
             double tiencoc, string trangthai, bool isValid)> 
             getInput()
@@ -45,10 +45,10 @@ namespace QuanLySanBongMini
             int thoigianchoi = int.Parse(cbbGioChoi.Text);
             string makh = string.Empty;
 
-            DateTime ngaydat = dtpNgayDat.Value.Date;
-            ngaydat = ngaydat.Date.AddHours(dtpGioDat.Value.Hour).AddMinutes(dtpGioDat.Value.Minute);
+            DateTime ngaybatdau = dtpNgayDat.Value.Date;
+            ngaybatdau = ngaybatdau.Date.AddHours(dtpGioDat.Value.Hour).AddMinutes(dtpGioDat.Value.Minute);
             DateTime ngayhientai = DateTime.Now;
-            DateTime ngaycaidat = ngaydat.Date.AddHours((int)thoigianchoi/60).AddMinutes(thoigianchoi%60);
+            DateTime ngaycaidat = ngaybatdau.AddMinutes(thoigianchoi);
 
             double tongtien = 0;
 
@@ -64,25 +64,22 @@ namespace QuanLySanBongMini
                 await _lock.WaitAsync();
 
                 KhachHang khachHang = await db.KhachHangs.FirstOrDefaultAsync(k => k.SDT == sdt);
-                makh = khachHang.makh;
+                if(khachHang == null)
+                {
+                    MessageBox.Show("Khách hàng chưa được đăng ký");
+                    isValid = false;
+                }
+                else
+                {
+                    makh = khachHang.makh;
+                }
 
                 //lấy thông tin sân bóng
                 SanBong sanbong = await db.SanBongs.FirstOrDefaultAsync(s=>s.masan == masan);
 
                 //Check xung đột giờ đặt sân
-                if (await isConflict(ngaydat,ngaycaidat,masan))
+                if (await isConflict(ngaybatdau,ngaycaidat,masan))
                 {
-                    isValid = false;
-                }
-                else if ((int)(ngaydat-ngayhientai).TotalDays >= 7)
-                {
-                    MessageBox.Show("Ngày đặt không được lớn hơn ngày hiện tại quá 7 ngày");
-                    isValid = false;
-                }
-                else if (ngaydat < ngayhientai)
-                {
-                    //Xử lý ngày đặt
-                    MessageBox.Show("Ngày đặt phải lớn hơn ngày giờ hiện tại");
                     isValid = false;
                 }
                 else if (sanbong == null)
@@ -95,11 +92,6 @@ namespace QuanLySanBongMini
                 {
                     //Xử lý số điện thoại của khách hàng
                     MessageBox.Show("Không được để trống số điện thoại");
-                    isValid = false;
-                }
-                else if (await db.KhachHangs.FirstOrDefaultAsync(k => k.SDT == sdt) == null)
-                {
-                    MessageBox.Show("Khách hàng chưa đăng ký hội viên");
                     isValid = false;
                 }
                 else if (string.IsNullOrEmpty(masan))
@@ -131,8 +123,8 @@ namespace QuanLySanBongMini
                     isValid = false;
                 }
 
-                    //lấy giá theo loại sân
-                    LoaiSan ls = await db.LoaiSans.FirstOrDefaultAsync(s => s.maloai == sanbong.maloai);
+                //lấy giá theo loại sân
+                LoaiSan ls = await db.LoaiSans.FirstOrDefaultAsync(s => s.maloai == sanbong.maloai);
                 if (ls == null)
                 {
                     MessageBox.Show("Lỗi loại sân");
@@ -141,12 +133,16 @@ namespace QuanLySanBongMini
 
                 //Tính tổng tiền
                 tongtien = double.Parse(txtTongTien.Text);
+                if(tiencoc > tongtien)
+                {
+                    MessageBox.Show($"Tiền cọc lớn hơn tổng tiền phải trả, trả lại khách {tongtien - tiencoc}");
+                }
             }
             
 
             _lock.Release();
                 //Trả về input
-            return (makh, masan, ngaydat, ngayhientai, ngaycaidat,
+            return (makh, masan, ngaybatdau, ngayhientai, ngaycaidat,
                     thoigianchoi, tongtien, tiencoc, 
                     trangthai, isValid);
         }
@@ -156,17 +152,34 @@ namespace QuanLySanBongMini
             bool isValid = false;
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                List<PhieuDatSan> phieudatsans = await db.PhieuDatSans.
-                                                    OrderByDescending(p => p.ngaydat).
-                                                    Where(p => p.masan == masan).
-                                                    ToListAsync();
-                if(phieudatsans.FirstOrDefault(p=>
-                                            p.thoigianbatdau<ketthuc ||
-                                            p.thoigiancaidat > batdau)  != null)
+                var phieuTrung = await db.PhieuDatSans
+                                .Where(p => p.masan == masan &&
+                                            p.thoigianbatdau < ketthuc &&
+                                            p.thoigiancaidat > batdau &&
+                                            p.trangthai != "Đã hủy")
+                                .FirstOrDefaultAsync();
+                if(phieuTrung != null)
                 {
-                    MessageBox.Show("Sân đã được đặt hoặc đang được sử dụng");
                     isValid = true;
                 }
+            }
+            return isValid;
+        }
+
+        private bool CheckNgayDat(DateTime ngaybatdau, DateTime  ngayhientai)
+        {
+            bool isValid = true;
+
+            if ((int)(ngaybatdau - ngayhientai).TotalDays >= 7)
+            {
+                MessageBox.Show("Ngày đặt không được lớn hơn ngày hiện tại quá 7 ngày");
+                isValid = false;
+            }
+            else if (ngaybatdau <= ngayhientai)
+            {
+                //Xử lý ngày đặt
+                MessageBox.Show("Ngày đặt phải lớn hơn ngày giờ hiện tại");
+                isValid = false;
             }
             return isValid;
         }
@@ -176,6 +189,10 @@ namespace QuanLySanBongMini
             txtMaPhieuDat.Enabled = false;
             txtMaSan.Enabled = false;
             txtTongTien.Enabled = false;
+
+            //Format ngày đặt
+            dtpNgayDat.Format = DateTimePickerFormat.Short;
+            dtpNgayDat.ShowUpDown = false;
 
             //Format thời gian đặt
             dtpGioDat.Format = DateTimePickerFormat.Custom;
@@ -191,7 +208,7 @@ namespace QuanLySanBongMini
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.ToListAsync();
-                await  Load_PhieuDatSan(phieuDatSans);
+                Load_PhieuDatSan(phieuDatSans);
             }
             lvSanBong.MultiSelect = false;
 
@@ -202,38 +219,42 @@ namespace QuanLySanBongMini
             ClearForm();
         }
 
-        private async Task Load_PhieuDatSan(List<PhieuDatSan> phieuDatSans)
+        private async void Load_PhieuDatSan(List<PhieuDatSan> phieuDatSans)
         {
-            txtMaSan.Enabled = false;
+            await CapNhatTrangThaiPhieu();
             phieuDatSans.OrderByDescending(s => s.thoigianbatdau).ToList();
+            dgvPhieuDatSan.AutoGenerateColumns = false;
+            dgvPhieuDatSan.DataSource = phieuDatSans;
+        }
+
+        private async Task CapNhatTrangThaiPhieu()
+        {
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
-                List<PhieuDatSan> capnhat = phieuDatSans.Where(p => p.trangthai == "Đã đặt").ToList();
-                if(capnhat != null)
+                List<PhieuDatSan> capnhat = await db.PhieuDatSans.Where(p => p.trangthai == "Đã đặt").ToListAsync();
+                if (capnhat != null)
                 {
+                    List<SanBong> sanBongs = await db.SanBongs.ToListAsync();
                     DateTime ngayhientai = DateTime.Now;
-                    foreach(PhieuDatSan phieuDatSan in capnhat)
+                    foreach (PhieuDatSan phieuDatSan in capnhat)
                     {
-                        SanBong sanBong = await db.SanBongs.
-                            FirstOrDefaultAsync(s=>s.masan == phieuDatSan.masan);
-                        if(phieuDatSan.thoigiancaidat < ngayhientai)
+                        SanBong sanBong = sanBongs.FirstOrDefault(s => s.masan == phieuDatSan.masan);
+                        if (phieuDatSan.thoigiancaidat <= ngayhientai)
                         {
                             phieuDatSan.trangthai = "Đã hoàn thành";
+                            if (sanBong != null)
+                            {
+                                sanBong.tinhtrang = "Trống";
+                            }
                         }
-                        else if(phieuDatSan.thoigianbatdau < ngayhientai && phieuDatSan.thoigiancaidat > ngayhientai)
+                        else if (phieuDatSan.thoigianbatdau < ngayhientai && phieuDatSan.thoigiancaidat > ngayhientai)
                         {
                             sanBong.tinhtrang = "Hoạt động";
-                        }
-                        else if (phieuDatSan.thoigianbatdau > ngayhientai && phieuDatSan.thoigiancaidat < ngayhientai)
-                        {
-                            sanBong.tinhtrang = "Trống";
                         }
                         await db.SaveChangesAsync();
                     }
                 }
             }
-            dgvPhieuDatSan.AutoGenerateColumns = false;
-            dgvPhieuDatSan.DataSource = phieuDatSans;
         }
 
         private void ClearForm()
@@ -243,6 +264,10 @@ namespace QuanLySanBongMini
             txtTongTien.Clear();
             txtTienCoc.Clear();
             txtSDTKH.Clear();
+            cbbTrangThai.SelectedIndex = 0;
+            cbbGioChoi.SelectedIndex = 1;
+            dtpNgayDat.Value = DateTime.Now;
+            dtpGioDat.Value = DateTime.Now;
         }
 
         private void Load_cbbTrangThai()
@@ -371,13 +396,13 @@ namespace QuanLySanBongMini
                 if (string.IsNullOrEmpty(keyword))
                 {
                     List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.ToListAsync();
-                    await Load_PhieuDatSan(phieuDatSans);
+                    Load_PhieuDatSan(phieuDatSans);
                 }
                 else
                 {
                     int key = int.Parse(keyword);
                     List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.Where(p => p.maphieu == key).ToListAsync();
-                    await Load_PhieuDatSan(phieuDatSans);
+                    Load_PhieuDatSan(phieuDatSans);
                 }
             }
         }
@@ -410,7 +435,7 @@ namespace QuanLySanBongMini
             DateTime start = DateTime.Now;
             DateTime end = DateTime.Now;
             start = dtpStart.Value;
-            end = dtpEnd.Value;
+            end = dtpEnd.Value.AddSeconds(1);
             if (start > end)
             {
                 MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
@@ -422,7 +447,7 @@ namespace QuanLySanBongMini
                 List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.
                     Where(p => p.thoigianbatdau >= start && p.thoigiancaidat <= end).
                     ToListAsync();
-                await Load_PhieuDatSan(phieuDatSans);
+                Load_PhieuDatSan(phieuDatSans);
             }
         }
 
@@ -471,7 +496,7 @@ namespace QuanLySanBongMini
             using (var db = new QL_SANBONG_MINIDatacontext())
             {
                 List<PhieuDatSan> phieuDatSans = await db.PhieuDatSans.ToListAsync();
-                await Load_PhieuDatSan(phieuDatSans);
+                Load_PhieuDatSan(phieuDatSans);
             }
         }
 
@@ -484,6 +509,7 @@ namespace QuanLySanBongMini
         private async void btnThem_Click(object sender, EventArgs e)
         {
             var input = await getInput();
+            input.isValid = CheckNgayDat(input.ngaybatdau, input.ngayhientai);
             if (!input.isValid)
             {
                 return;
@@ -493,8 +519,33 @@ namespace QuanLySanBongMini
             {
                 PhieuDatSan insertPhieuDat = new PhieuDatSan()
                 {
-                    makh = input.makh
+                    //thiếu mã nhân viên
+                    manv = "NV001",
+                    makh = input.makh,
+                    masan = input.masan,
+                    thoigianbatdau = input.ngaybatdau,
+                    thoigiancaidat = input.ngaycaidat,
+                    ngaydat = input.ngayhientai,
+                    tongtiensan = (decimal)input.tongtien,
+                    tiencoc = (decimal)input.tiencoc,
+                    trangthai = input.trangthai
                 };
+                await _lock.WaitAsync();
+                try
+                {
+                    db.PhieuDatSans.Add(insertPhieuDat);
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                    return;
+                }
+                finally
+                {
+                    _lock.Release();
+                }
+                MessageBox.Show("Thêm thành công");
             }
         }
 
@@ -540,6 +591,15 @@ namespace QuanLySanBongMini
             {
                 TinhTongTien();
             }
+        }
+
+        //-Cập nhât: chỉ cho cập nhật sân cùng loại, cập nhật số điện thoại
+        //của khách hàng và cập nhật trạng thái
+        //-Những cập nhật khác như mã nhân viên, tiền cọc, ngày giờ đặt,
+        //thời gian chơi và mã phiếu đặt sẽ bị từ chối hoặc không cập nhật
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
