@@ -48,9 +48,38 @@ namespace QuanLySanBongMini
             }
 
             gridQuanLyNhanVien.DataSource = dsNhanVien;
+            gridQuanLyNhanVien.ClearSelection();
             
         }
 
+        private void gridQuanLyNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gridQuanLyNhanVien.SelectedCells.Count > 0)
+            {
+                DataGridViewRow selected = gridQuanLyNhanVien.SelectedRows[0];
+
+                string MaNV= selected.Cells["MaNhanVien"].Value.ToString();
+                string HoTen= selected.Cells["HoTen"].Value.ToString();
+                string GioiTinh = selected.Cells["GioiTinh"].Value.ToString();
+                string NgaySinh = selected.Cells["NgaySinh"].Value.ToString();
+                string Email = selected.Cells["Email"].Value.ToString();
+                string SoDienThoai = selected.Cells["SDT"].Value.ToString();
+                string ChucVu = selected.Cells["ChucVu"].Value.ToString();
+
+                object LuongCoBan = selected.Cells["LuongCB"].Value;
+                decimal luong = Convert.ToDecimal(LuongCoBan);
+
+
+                txtMaNV.Text = MaNV;
+                txtHoTen.Text = HoTen;
+                txtGioiTinh.Text = GioiTinh;
+                txtNgaySinh.Text = NgaySinh;
+                txtEmail.Text = Email;
+                txtSoDienThoai.Text = SoDienThoai;
+                txtLuongCoBan.Text = luong.ToString("F0");
+                txtChucVu.Text = ChucVu;
+            }
+        }
     }
 }
 

@@ -56,5 +56,16 @@ namespace QuanLySanBongMini
             }
 
         }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Ngăn không cho phát ra tiếng "ding" (lỗi) của Windows
+                e.SuppressKeyPress = true;
+
+                btnLogin.PerformClick();
+            }
+        }
     }
 }
