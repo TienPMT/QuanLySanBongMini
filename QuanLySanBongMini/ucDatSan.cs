@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,12 +35,19 @@ namespace QuanLySanBongMini
             InitializeComponent();
         }
 
-        private async Task<(string makh, string masan,DateTime ngaybatdau, 
+        private async Task<(int maphieu, string makh, string masan,DateTime ngaybatdau, 
             DateTime ngayhientai, DateTime ngaycaidat, int thoigianchoi, double tongtien,
             double tiencoc, string trangthai, bool isValid)> 
             getInput()
         {
             //Khởi tạo tên biến và gán giá trị
+            int maphieu = 0;
+            string strMaPhieu = txtMaPhieuDat.Text;
+            if (!string.IsNullOrEmpty(strMaPhieu))
+            {
+                maphieu = int.Parse(strMaPhieu);
+            }
+
             string sdt = txtSDTKH.Text.Trim();
             string masan = txtMaSan.Text.Trim();
             int thoigianchoi = int.Parse(cbbGioChoi.Text);
@@ -142,9 +150,9 @@ namespace QuanLySanBongMini
 
             _lock.Release();
                 //Trả về input
-            return (makh, masan, ngaybatdau, ngayhientai, ngaycaidat,
-                    thoigianchoi, tongtien, tiencoc, 
-                    trangthai, isValid);
+            return (maphieu, makh, masan, ngaybatdau, ngayhientai, 
+                ngaycaidat, thoigianchoi, tongtien, 
+                    tiencoc, trangthai, isValid);
         }
 
         private async Task<bool> isConflict(DateTime batdau, DateTime ketthuc, string masan)
@@ -227,6 +235,7 @@ namespace QuanLySanBongMini
             dgvPhieuDatSan.DataSource = phieuDatSans;
         }
 
+        //kiểm tra thay đổi trạng thái
         private async Task CapNhatTrangThaiPhieu()
         {
             using (var db = new QL_SANBONG_MINIDatacontext())
@@ -234,11 +243,10 @@ namespace QuanLySanBongMini
                 List<PhieuDatSan> capnhat = await db.PhieuDatSans.Where(p => p.trangthai == "Đã đặt").ToListAsync();
                 if (capnhat != null)
                 {
-                    List<SanBong> sanBongs = await db.SanBongs.ToListAsync();
                     DateTime ngayhientai = DateTime.Now;
                     foreach (PhieuDatSan phieuDatSan in capnhat)
                     {
-                        SanBong sanBong = sanBongs.FirstOrDefault(s => s.masan == phieuDatSan.masan);
+                        SanBong sanBong = await db.SanBongs.FirstOrDefaultAsync(s => s.masan == phieuDatSan.masan);
                         if (phieuDatSan.thoigiancaidat <= ngayhientai)
                         {
                             phieuDatSan.trangthai = "Đã hoàn thành";
@@ -268,6 +276,10 @@ namespace QuanLySanBongMini
             cbbGioChoi.SelectedIndex = 1;
             dtpNgayDat.Value = DateTime.Now;
             dtpGioDat.Value = DateTime.Now;
+            dtpNgayDat.Enabled = true;
+            dtpGioDat.Enabled = true;
+            cbbGioChoi.Enabled = true;
+            txtTienCoc.Enabled = true;
         }
 
         private void Load_cbbTrangThai()
@@ -351,7 +363,6 @@ namespace QuanLySanBongMini
         {
             if (lvSanBong.SelectedItems.Count == 0)
             {
-                ClearForm();
                 return;
             }
 
@@ -489,6 +500,13 @@ namespace QuanLySanBongMini
             txtTongTien.Text = tongtien.ToString();
             txtTienCoc.Text = tiencoc.ToString();
             cbbTrangThai.Text = trangthai;
+
+            //Vô hiệu hóa Form
+
+            dtpNgayDat.Enabled = false;
+            dtpGioDat.Enabled = false;
+            cbbGioChoi.Enabled = false;
+            txtTienCoc.Enabled = false;
         }
 
         private async void btnReload_Click(object sender, EventArgs e)
@@ -563,7 +581,6 @@ namespace QuanLySanBongMini
                 }
                 if(sanbong.tinhtrang ==  "Hoạt động")
                 {
-                    MessageBox.Show("Sân đang hoạt động");
                     return;
                 }
                 //lấy giá theo loại sân
@@ -597,9 +614,49 @@ namespace QuanLySanBongMini
         //của khách hàng và cập nhật trạng thái
         //-Những cập nhật khác như mã nhân viên, tiền cọc, ngày giờ đặt,
         //thời gian chơi và mã phiếu đặt sẽ bị từ chối hoặc không cập nhật
-        private void btnCapNhat_Click(object sender, EventArgs e)
+        private async void btnCapNhat_Click(object sender, EventArgs e)
         {
+            var input = await getInput();
+            if (!input.isValid)
+            {
+                return;
+            }
+            using(var db = new QL_SANBONG_MINIDatacontext())
+            {
+                PhieuDatSan updatedPhieu = await db.PhieuDatSans.FirstOrDefaultAsync(p => p.maphieu == input.maphieu);
 
+
+
+                if (!await isConflict(input.ngaybatdau,input.ngaycaidat, input.masan))
+                {
+                    SanBong curSan = await db.SanBongs.FirstOrDefaultAsync(s => s.masan == updatedPhieu.masan);
+                    SanBong updateSan = await db.SanBongs.FirstOrDefaultAsync(s => s.masan == input.masan);
+                    if (curSan.maloai != updateSan.maloai)
+                    {
+                        MessageBox.Show("Sân được đổi phải cùng loại sân trước đó ");
+                        return;
+                    }
+                }
+                await _lock.WaitAsync();
+                try
+                {
+                    updatedPhieu.makh = input.makh;
+                    updatedPhieu.masan = input.masan;
+                    updatedPhieu.trangthai = input.trangthai;
+                    updatedPhieu.tiencoc = (decimal)input.tiencoc;
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                    return;
+                }
+                finally
+                {
+                    _lock.Release();
+                }
+                MessageBox.Show("Cập nhật thành công");
+            }
         }
     }
 }

@@ -103,7 +103,7 @@
             this.grbLichSu.Controls.Add(this.dtpEnd);
             this.grbLichSu.Controls.Add(this.dtpStart);
             this.grbLichSu.Controls.Add(this.dgvPhieuDatSan);
-            this.grbLichSu.Location = new System.Drawing.Point(4, 317);
+            this.grbLichSu.Location = new System.Drawing.Point(0, 317);
             this.grbLichSu.Name = "grbLichSu";
             this.grbLichSu.Size = new System.Drawing.Size(1041, 394);
             this.grbLichSu.TabIndex = 8;
@@ -191,7 +191,7 @@
             this.dgvPhieuDatSan.ReadOnly = true;
             this.dgvPhieuDatSan.RowHeadersWidth = 51;
             this.dgvPhieuDatSan.RowTemplate.Height = 24;
-            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1031, 345);
+            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1040, 338);
             this.dgvPhieuDatSan.TabIndex = 0;
             // 
             // Column1

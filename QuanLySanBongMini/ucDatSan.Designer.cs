@@ -361,7 +361,7 @@
             this.grbLichSu.Controls.Add(this.dgvPhieuDatSan);
             this.grbLichSu.Location = new System.Drawing.Point(0, 305);
             this.grbLichSu.Name = "grbLichSu";
-            this.grbLichSu.Size = new System.Drawing.Size(1041, 439);
+            this.grbLichSu.Size = new System.Drawing.Size(1040, 439);
             this.grbLichSu.TabIndex = 21;
             this.grbLichSu.TabStop = false;
             this.grbLichSu.Text = "Lịch sử phiếu đặt sân";
@@ -432,6 +432,7 @@
             // 
             // dgvPhieuDatSan
             // 
+            this.dgvPhieuDatSan.CausesValidation = false;
             this.dgvPhieuDatSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhieuDatSan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maphieu,
@@ -451,7 +452,7 @@
             this.dgvPhieuDatSan.ReadOnly = true;
             this.dgvPhieuDatSan.RowHeadersWidth = 51;
             this.dgvPhieuDatSan.RowTemplate.Height = 24;
-            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1040, 384);
+            this.dgvPhieuDatSan.Size = new System.Drawing.Size(1040, 350);
             this.dgvPhieuDatSan.TabIndex = 0;
             this.dgvPhieuDatSan.SelectionChanged += new System.EventHandler(this.dgvPhieuDatSan_SelectionChanged);
             this.dgvPhieuDatSan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvPhieuDatSan_KeyPress);
