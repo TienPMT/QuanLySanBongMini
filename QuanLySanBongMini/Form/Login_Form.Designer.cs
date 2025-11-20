@@ -146,6 +146,7 @@
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập - Quản Lý Sân Bóng Mini";
+            this.Load += new System.EventHandler(this.Login_Form_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.ResumeLayout(false);

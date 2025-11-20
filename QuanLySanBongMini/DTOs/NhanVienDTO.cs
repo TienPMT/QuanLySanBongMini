@@ -16,6 +16,7 @@ namespace QuanLySanBongMini.DTOs
         public string SDT { get; set;  }
         public decimal LuongCB { get; set;  }
         public string Email { get; set;  }
-        public string ChucVu { get; set;  }
+        public int MaChucVu { get; set;  }
+        public string TenChucVu { get; set;  }
     }
 }

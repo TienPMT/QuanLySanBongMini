@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,37 +88,38 @@
     <Compile Include="Database\Entities\SanPham.cs" />
     <Compile Include="Database\Entities\TaiKhoan.cs" />
     <Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Form\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Form\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\ChucVuDTO.cs" />
     <Compile Include="DTOs\NhanVienDTO.cs" />
-    <Compile Include="Login_Form.cs">
+    <Compile Include="Form\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_Form.Designer.cs">
+    <Compile Include="Form\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucMainForm.cs">
+    <Compile Include="User control\ucMainForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucMainForm.Designer.cs">
+    <Compile Include="User control\ucMainForm.Designer.cs">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien.cs">
+    <Compile Include="User control\ucNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien.Designer.cs">
+    <Compile Include="User control\ucNhanVien.Designer.cs">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Form\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_Form.resx">
+    <EmbeddedResource Include="Form\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,10 +131,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucMainForm.resx">
+    <EmbeddedResource Include="User control\ucMainForm.resx">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien.resx">
+    <EmbeddedResource Include="User control\ucNhanVien.resx">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -137,6 +153,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
