@@ -17,21 +17,19 @@ namespace QuanLySanBongMini
     {
         private Button currentActiveButton = null;
 
-<<<<<<<< HEAD:QuanLySanBongMini/Form/Dashboard.cs
         private string manv_logged;
 
-        public Main_Form(string MaNhanVien)
-========
-        //Khởi tạo uc
         ucKhachHang UIKhachHang = new ucKhachHang();
         ucSanBong UISanBong = new ucSanBong();
         ucDatSan UIDatSan = new ucDatSan();
 
-        public Main_Form()
->>>>>>>> develop:QuanLySanBongMini/Main_Form.cs
+        public Main_Form(string MaNhanVien)
         {
             InitializeComponent();
+
+            // Gán mã nhân viên đăng nhập
             this.manv_logged = MaNhanVien;
+
             // Set default active button
             SetActiveButton(btnHeThong);
         }
@@ -138,13 +136,6 @@ namespace QuanLySanBongMini
             loadUserControl(uc);
         }
 
-        private void loadUserControl(UserControl uc)
-        {
-            pnlMainContent.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            pnlMainContent.Controls.Add(uc);
-        }
-
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -159,6 +150,11 @@ namespace QuanLySanBongMini
         {
             ucMainForm uc = new ucMainForm();
             loadUserControl(uc);
+        }
+
+        private void pnlMainContent_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

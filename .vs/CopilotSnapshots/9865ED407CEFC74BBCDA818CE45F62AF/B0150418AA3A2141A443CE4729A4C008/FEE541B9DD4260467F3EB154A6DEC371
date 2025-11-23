@@ -41,8 +41,14 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMainContent = new System.Windows.Forms.Panel();
+            this.pnlWelcome = new System.Windows.Forms.Panel();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
+            this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
+            this.pnlMainContent.SuspendLayout();
+            this.pnlWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -249,20 +255,66 @@
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "⚽\r\nQUẢN LÝ\r\nSÂN BÓNG";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLogo.Click += new System.EventHandler(this.lblLogo_Click);
             // 
             // pnlMainContent
             // 
-            this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.pnlMainContent.Controls.Add(this.pnlWelcome);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(250, 0);
             this.pnlMainContent.Name = "pnlMainContent";
+            this.pnlMainContent.Padding = new System.Windows.Forms.Padding(30);
             this.pnlMainContent.Size = new System.Drawing.Size(1050, 700);
             this.pnlMainContent.TabIndex = 1;
-<<<<<<<< HEAD:QuanLySanBongMini/Form/Dashboard.Designer.cs
-            this.pnlMainContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainContent_Paint);
-========
->>>>>>>> develop:.vs/CopilotSnapshots/9865ED407CEFC74BBCDA818CE45F62AF/5BB5CC30772A6F45884FC80110214723/D6470AD36317A377D6C6A7C047DA077C
+            // 
+            // pnlWelcome
+            // 
+            this.pnlWelcome.BackColor = System.Drawing.Color.White;
+            this.pnlWelcome.Controls.Add(this.lblDateTime);
+            this.pnlWelcome.Controls.Add(this.lblWelcomeMessage);
+            this.pnlWelcome.Controls.Add(this.lblWelcomeTitle);
+            this.pnlWelcome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlWelcome.Location = new System.Drawing.Point(30, 30);
+            this.pnlWelcome.Name = "pnlWelcome";
+            this.pnlWelcome.Size = new System.Drawing.Size(990, 200);
+            this.pnlWelcome.TabIndex = 0;
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblDateTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.lblDateTime.Location = new System.Drawing.Point(0, 160);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(990, 40);
+            this.lblDateTime.TabIndex = 2;
+            this.lblDateTime.Text = "🕐 Thứ Hai, 01 Tháng 01, 2024 - 08:00 AM";
+            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWelcomeMessage
+            // 
+            this.lblWelcomeMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblWelcomeMessage.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lblWelcomeMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(0, 70);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(990, 80);
+            this.lblWelcomeMessage.TabIndex = 1;
+            this.lblWelcomeMessage.Text = "Chúc bạn một ngày làm việc hiệu quả!\r\nHãy chọn chức năng từ menu bên trái để bắt" +
+    " đầu.";
+            this.lblWelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWelcomeTitle
+            // 
+            this.lblWelcomeTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblWelcomeTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.lblWelcomeTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.lblWelcomeTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblWelcomeTitle.Name = "lblWelcomeTitle";
+            this.lblWelcomeTitle.Size = new System.Drawing.Size(990, 70);
+            this.lblWelcomeTitle.TabIndex = 0;
+            this.lblWelcomeTitle.Text = "👋 Xin chào, [Tên Nhân Viên]!
+            this.lblWelcomeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main_Form
             // 
@@ -280,6 +332,8 @@
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
+            this.pnlMainContent.ResumeLayout(false);
+            this.pnlWelcome.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,15 +351,12 @@
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Label lblUserInfo;
-<<<<<<<< HEAD:QuanLySanBongMini/Form/Dashboard.Designer.cs
-========
-<<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-        private System.Windows.Forms.Panel pnlMainContent;
-========
->>>>>>>> origin/Feature-Tien:.vs/CopilotSnapshots/9865ED407CEFC74BBCDA818CE45F62AF/5BB5CC30772A6F45884FC80110214723/D6470AD36317A377D6C6A7C047DA077C
->>>>>>>> develop:.vs/CopilotSnapshots/9865ED407CEFC74BBCDA818CE45F62AF/5BB5CC30772A6F45884FC80110214723/D6470AD36317A377D6C6A7C047DA077C
         private System.Windows.Forms.Button btnHeThong;
         private System.Windows.Forms.Panel pnlMainContent;
+        private System.Windows.Forms.Panel pnlWelcome;
+        private System.Windows.Forms.Label lblWelcomeTitle;
+        private System.Windows.Forms.Label lblWelcomeMessage;
+        private System.Windows.Forms.Label lblDateTime;
     }
 }
 

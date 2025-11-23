@@ -17,30 +17,14 @@ namespace QuanLySanBongMini
     {
         private Button currentActiveButton = null;
 
-<<<<<<<< HEAD:QuanLySanBongMini/Form/Dashboard.cs
         private string manv_logged;
 
         public Main_Form(string MaNhanVien)
-========
-        //Khởi tạo uc
-        ucKhachHang UIKhachHang = new ucKhachHang();
-        ucSanBong UISanBong = new ucSanBong();
-        ucDatSan UIDatSan = new ucDatSan();
-
-        public Main_Form()
->>>>>>>> develop:QuanLySanBongMini/Main_Form.cs
         {
             InitializeComponent();
             this.manv_logged = MaNhanVien;
             // Set default active button
             SetActiveButton(btnHeThong);
-        }
-
-        private void loadUserControl(UserControl uc)
-        {
-            pnlMainContent.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            pnlMainContent.Controls.Add(uc);
         }
 
         // Method to handle button active state
@@ -68,21 +52,18 @@ namespace QuanLySanBongMini
         {
             SetActiveButton(btnDatSan);
             // Logic sẽ thêm ở giai đoạn 2
-            loadUserControl(UIDatSan);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnKhachHang);
             // Logic sẽ thêm ở giai đoạn 2
-            loadUserControl(UIKhachHang);
         }
 
         private void btnSanBong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnSanBong);
             // Logic sẽ thêm ở giai đoạn 2
-            loadUserControl(UISanBong);
         }
 
         private void btnBanHang_Click(object sender, EventArgs e)
@@ -100,9 +81,7 @@ namespace QuanLySanBongMini
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnNhanVien);
-
-            ucNhanVien uc = new ucNhanVien();
-            loadUserControl(uc);
+            // Logic sẽ thêm ở giai đoạn 2
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -134,31 +113,15 @@ namespace QuanLySanBongMini
                     btnThongKe.Visible = false;
                 }    
             }
-            ucMainForm uc = new ucMainForm();
-            loadUserControl(uc);
-        }
-
-        private void loadUserControl(UserControl uc)
-        {
-            pnlMainContent.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            pnlMainContent.Controls.Add(uc);
         }
 
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
-        private void pnlMainContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblLogo_Click(object sender, EventArgs e)
-        {
-            ucMainForm uc = new ucMainForm();
-            loadUserControl(uc);
+    }
+}
+            Application.Exit();
         }
     }
 }

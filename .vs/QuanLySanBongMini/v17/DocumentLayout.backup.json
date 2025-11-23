@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\database\\ql_sanbong_minidatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\database\\ql_sanbong_minidatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\form\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\form\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|e:\\desktop\\tien\\huit\\nam3\\hk1\\.net\\doan\\quanlysanbongmini\\quanlysanbongmini\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5791D772-F7B2-42CC-B945-6F3185B840FA}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main_Form.cs [Design]",
+              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Form\\Main_Form.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Form\\Main_Form.cs",
+              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Form\\Main_Form.cs [Design]",
+              "RelativeToolTip": "QuanLySanBongMini\\Form\\Main_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T05:39:00.071Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Program.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Program.cs",
+              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Program.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T05:36:14.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QL_SANBONG_MINIDatacontext.cs",
+              "DocumentMoniker": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Database\\QL_SANBONG_MINIDatacontext.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Database\\QL_SANBONG_MINIDatacontext.cs",
+              "ToolTip": "E:\\Desktop\\Tien\\HUIT\\Nam3\\HK1\\.NET\\DoAn\\QuanLySanBongMini\\QuanLySanBongMini\\Database\\QL_SANBONG_MINIDatacontext.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\Database\\QL_SANBONG_MINIDatacontext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T05:30:44.074Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
