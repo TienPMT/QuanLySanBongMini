@@ -19,5 +19,10 @@ namespace QuanLySanBongMini.Database.Entities
 
         [Column("DONGIA_GIO")]
         public decimal dongiagio {  get; set; }
+
+        public override string ToString()
+        {
+            return tenloai;
+        }
     }
 }
