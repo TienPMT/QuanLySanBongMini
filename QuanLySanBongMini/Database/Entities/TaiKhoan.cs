@@ -12,10 +12,13 @@ namespace QuanLySanBongMini.Database.Entities
     public class TaiKhoan
     {
         [Column("MANV"), Key, ForeignKey("username")]
-        public string manv { get; set;  }
+        [Required]
+        public string manv { get; set; }
 
         [Column("PASSWORD")]
-        public string password { get; set;  }
+        [Required]
+        public string password { get; set; }
+
         public virtual NhanVien username { get; set; }
     }
 }

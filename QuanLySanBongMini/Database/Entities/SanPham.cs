@@ -11,6 +11,8 @@ namespace QuanLySanBongMini.Database.Entities
     [Table("SanPham")]
     public class SanPham
     {
+        [Column("MALOAI"),ForeignKey("LoaiSanPham_data")]
+        public int loaiSP { get; set; }
         [Column("MASP"), Key]
         public string masp { get; set;  }
 
@@ -25,6 +27,12 @@ namespace QuanLySanBongMini.Database.Entities
 
         [Column("SOLUONGTON")]
         public int soluongton { get; set;  }
+
+        [Column("HINHANH_SP")]
+        public string HinhAnhSP { get; set; }
+        
+
+        virtual public LoaiSanPham LoaiSanPham_data { get; set; }
 
     }
 }

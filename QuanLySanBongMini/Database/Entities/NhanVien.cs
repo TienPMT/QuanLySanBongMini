@@ -12,19 +12,31 @@ namespace QuanLySanBongMini.Database.Entities
     public class NhanVien
     {
         [Column("MANV"), Key]
+        [Required]
         public string manv { get; set; }
 
         [Column("HOTEN")]
+        [Required]
         public string hoten { get; set; }
 
         [Column("GIOITINH")]
+        [Required]
         public string gioitinh { get; set; }
 
         [Column("SDT")]
-        public string sdt { get; set;  }
+        [Required]
+        public string sdt { get; set; }
+
+        [Column("NGAYSINH")]
+        [Required]
+        public DateTime? ngaysinh;
 
         [Column("MACV"), ForeignKey("tencv")]
+        [Required]
         public int macv { get; set; }
+
+        [Column("HINHANH_NV")]
+        public string HinhAnhNV { get; set; }
 
         public virtual ChucVu tencv { get; set; }
     }

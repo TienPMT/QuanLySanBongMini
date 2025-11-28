@@ -42,9 +42,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Entities\CartItem.cs" />
     <Compile Include="Database\Entities\ChiTietHoaDon.cs" />
     <Compile Include="Database\Entities\ChucVu.cs" />
     <Compile Include="Database\Entities\HoaDonDichVu.cs" />
     <Compile Include="Database\Entities\KhachHang.cs" />
     <Compile Include="Database\Entities\LoaiSan.cs" />
+    <Compile Include="Database\Entities\LoaiSanPham.cs" />
     <Compile Include="Database\Entities\NhanVien.cs" />
     <Compile Include="Database\Entities\PhieuDatSan.cs" />
     <Compile Include="Database\Entities\SanBong.cs" />
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBanHang.Designer.cs">
+      <DependentUpon>ucBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucDatSan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     <Compile Include="ucSanBong.Designer.cs">
       <DependentUpon>ucSanBong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTaiKhoan.Designer.cs">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucBanHang.resx">
+      <DependentUpon>ucBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucDatSan.resx">
       <DependentUpon>ucDatSan.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucSanBong.resx">
       <DependentUpon>ucSanBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTaiKhoan.resx">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -139,9 +163,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Img\Nhân viên\NV001.jpg" />
+    <Content Include="Img\Sản phẩm\AQUAFINA.jpg" />
+    <Content Include="Img\Sản phẩm\KHAN.jpg" />
+    <Content Include="Img\Sản phẩm\PEPSI.jpg" />
+    <Content Include="Img\Sản phẩm\SNACK.jpg" />
+    <Content Include="Img\Sản phẩm\STING.jpg" />
     <Content Include="Resources\San5.jpg" />
     <Content Include="Resources\San7.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
