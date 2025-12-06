@@ -25,5 +25,7 @@ namespace QuanLySanBongMini.Database
         public DbSet<SanBong> SanBongs { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
-    }
+        public DbSet<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+        public DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
+        }
 }

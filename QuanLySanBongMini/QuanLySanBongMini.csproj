@@ -86,16 +86,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Entities\ChiTietHoaDon.cs" />
+    <Compile Include="Database\Entities\ChiTietPhieuNhap.cs" />
     <Compile Include="Database\Entities\ChucVu.cs" />
     <Compile Include="Database\Entities\HoaDonDichVu.cs" />
     <Compile Include="Database\Entities\KhachHang.cs" />
     <Compile Include="Database\Entities\LoaiSan.cs" />
     <Compile Include="Database\Entities\NhanVien.cs" />
     <Compile Include="Database\Entities\PhieuDatSan.cs" />
+    <Compile Include="Database\Entities\PhieuNhapHang.cs" />
     <Compile Include="Database\Entities\SanBong.cs" />
     <Compile Include="Database\Entities\SanPham.cs" />
     <Compile Include="Database\Entities\TaiKhoan.cs" />
     <Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
+    <Compile Include="DTOs\ChiTietHoaDonDTO.cs" />
+    <Compile Include="DTOs\HoaDonDichVuDTO.cs" />
+    <Compile Include="DTOs\KhachHangDTO.cs" />
+    <Compile Include="DTOs\PhieuDatSanDTO.cs" />
+    <Compile Include="DTOs\SanPham.DTO.cs" />
+    <Compile Include="DTOs\ThongKeChiPhiDTO.cs" />
+    <Compile Include="DTOs\ThongKeHoaDonDTO.cs" />
+    <Compile Include="Form\ForgotPassword_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ForgotPassword_Form.Designer.cs">
+      <DependentUpon>ForgotPassword_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,36 +127,52 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User control\ucMainForm.cs">
+    <Compile Include="Report\ThongKeDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\ucMainForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User control\ucMainForm.Designer.cs">
+    <Compile Include="uc\ucMainForm.Designer.cs">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User control\ucNhanVien.cs">
+    <Compile Include="uc\ucNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User control\ucNhanVien.Designer.cs">
+    <Compile Include="uc\ucNhanVien.Designer.cs">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="User control\ucDatSan.cs">
+    <Compile Include="uc\ucDatSan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User control\ucDatSan.Designer.cs">
+    <Compile Include="uc\ucDatSan.Designer.cs">
       <DependentUpon>ucDatSan.cs</DependentUpon>
     </Compile>
-    <Compile Include="User control\ucKhachHang.cs">
+    <Compile Include="uc\ucKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User control\ucKhachHang.Designer.cs">
+    <Compile Include="uc\ucKhachHang.Designer.cs">
       <DependentUpon>ucKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="User control\ucSanBong.cs">
+    <Compile Include="uc\ucSanBong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User control\ucSanBong.Designer.cs">
+    <Compile Include="uc\ucSanBong.Designer.cs">
       <DependentUpon>ucSanBong.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc\ucThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\ForgotPassword_Form.resx">
+      <DependentUpon>ForgotPassword_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,20 +189,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User control\ucMainForm.resx">
+    <EmbeddedResource Include="Report\ThongKeDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucMainForm.resx">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User control\ucNhanVien.resx">
+    <EmbeddedResource Include="uc\ucNhanVien.resx">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User control\ucDatSan.resx">
+    <EmbeddedResource Include="uc\ucDatSan.resx">
       <DependentUpon>ucDatSan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User control\ucKhachHang.resx">
+    <EmbeddedResource Include="uc\ucKhachHang.resx">
       <DependentUpon>ucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User control\ucSanBong.resx">
+    <EmbeddedResource Include="uc\ucSanBong.resx">
       <DependentUpon>ucSanBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

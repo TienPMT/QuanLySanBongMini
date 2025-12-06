@@ -60,8 +60,9 @@
             this.pnlSidebar.Controls.Add(this.pnlLogo);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(250, 700);
+            this.pnlSidebar.Size = new System.Drawing.Size(188, 612);
             this.pnlSidebar.TabIndex = 0;
             // 
             // lblUserInfo
@@ -70,9 +71,10 @@
             this.lblUserInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblUserInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblUserInfo.ForeColor = System.Drawing.Color.White;
-            this.lblUserInfo.Location = new System.Drawing.Point(0, 650);
+            this.lblUserInfo.Location = new System.Drawing.Point(0, 571);
+            this.lblUserInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(250, 50);
+            this.lblUserInfo.Size = new System.Drawing.Size(188, 41);
             this.lblUserInfo.TabIndex = 9;
             this.lblUserInfo.Text = "Hello, [User]";
             this.lblUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,10 +88,11 @@
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 480);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 393);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnThongKe.Size = new System.Drawing.Size(250, 50);
+            this.btnThongKe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnThongKe.Size = new System.Drawing.Size(188, 41);
             this.btnThongKe.TabIndex = 8;
             this.btnThongKe.Text = "📊  Thống Kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,10 +108,11 @@
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 430);
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 352);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNhanVien.Size = new System.Drawing.Size(250, 50);
+            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnNhanVien.Size = new System.Drawing.Size(188, 41);
             this.btnNhanVien.TabIndex = 7;
             this.btnNhanVien.Text = "👥  Nhân Viên";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,10 +128,11 @@
             this.btnHangHoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHangHoa.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnHangHoa.ForeColor = System.Drawing.Color.White;
-            this.btnHangHoa.Location = new System.Drawing.Point(0, 380);
+            this.btnHangHoa.Location = new System.Drawing.Point(0, 311);
+            this.btnHangHoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnHangHoa.Name = "btnHangHoa";
-            this.btnHangHoa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHangHoa.Size = new System.Drawing.Size(250, 50);
+            this.btnHangHoa.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnHangHoa.Size = new System.Drawing.Size(188, 41);
             this.btnHangHoa.TabIndex = 6;
             this.btnHangHoa.Text = "📦  Hàng Hóa";
             this.btnHangHoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,10 +148,11 @@
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnBanHang.ForeColor = System.Drawing.Color.White;
-            this.btnBanHang.Location = new System.Drawing.Point(0, 330);
+            this.btnBanHang.Location = new System.Drawing.Point(0, 270);
+            this.btnBanHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBanHang.Size = new System.Drawing.Size(250, 50);
+            this.btnBanHang.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnBanHang.Size = new System.Drawing.Size(188, 41);
             this.btnBanHang.TabIndex = 5;
             this.btnBanHang.Text = "💰  Bán Hàng";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,10 +168,11 @@
             this.btnSanBong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSanBong.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnSanBong.ForeColor = System.Drawing.Color.White;
-            this.btnSanBong.Location = new System.Drawing.Point(0, 280);
+            this.btnSanBong.Location = new System.Drawing.Point(0, 229);
+            this.btnSanBong.Margin = new System.Windows.Forms.Padding(2);
             this.btnSanBong.Name = "btnSanBong";
-            this.btnSanBong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSanBong.Size = new System.Drawing.Size(250, 50);
+            this.btnSanBong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnSanBong.Size = new System.Drawing.Size(188, 41);
             this.btnSanBong.TabIndex = 4;
             this.btnSanBong.Text = "⚽  Sân Bóng";
             this.btnSanBong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,10 +188,11 @@
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 230);
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 188);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnKhachHang.Size = new System.Drawing.Size(250, 50);
+            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnKhachHang.Size = new System.Drawing.Size(188, 41);
             this.btnKhachHang.TabIndex = 3;
             this.btnKhachHang.Text = "👤  Khách Hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,10 +208,11 @@
             this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatSan.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnDatSan.ForeColor = System.Drawing.Color.White;
-            this.btnDatSan.Location = new System.Drawing.Point(0, 180);
+            this.btnDatSan.Location = new System.Drawing.Point(0, 147);
+            this.btnDatSan.Margin = new System.Windows.Forms.Padding(2);
             this.btnDatSan.Name = "btnDatSan";
-            this.btnDatSan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDatSan.Size = new System.Drawing.Size(250, 50);
+            this.btnDatSan.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnDatSan.Size = new System.Drawing.Size(188, 41);
             this.btnDatSan.TabIndex = 2;
             this.btnDatSan.Text = "📅  Đặt Sân";
             this.btnDatSan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,10 +228,11 @@
             this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 130);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 106);
+            this.btnHeThong.Margin = new System.Windows.Forms.Padding(2);
             this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHeThong.Size = new System.Drawing.Size(250, 50);
+            this.btnHeThong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnHeThong.Size = new System.Drawing.Size(188, 41);
             this.btnHeThong.TabIndex = 1;
             this.btnHeThong.Text = "⚙️  Hệ Thống";
             this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,8 +244,9 @@
             this.pnlLogo.Controls.Add(this.lblLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(250, 130);
+            this.pnlLogo.Size = new System.Drawing.Size(188, 106);
             this.pnlLogo.TabIndex = 0;
             // 
             // lblLogo
@@ -244,34 +255,40 @@
             this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblLogo.ForeColor = System.Drawing.Color.White;
             this.lblLogo.Location = new System.Drawing.Point(0, 0);
+            this.lblLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(250, 130);
+            this.lblLogo.Size = new System.Drawing.Size(188, 106);
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "⚽\r\nQUẢN LÝ\r\nSÂN BÓNG";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLogo.Click += new System.EventHandler(this.lblLogo_Click);
             // 
             // pnlMainContent
             // 
             this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.Location = new System.Drawing.Point(250, 0);
+            this.pnlMainContent.Location = new System.Drawing.Point(188, 0);
+            this.pnlMainContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(1050, 700);
+            this.pnlMainContent.Size = new System.Drawing.Size(924, 612);
             this.pnlMainContent.TabIndex = 1;
-            this.pnlMainContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainContent_Paint_1);
             // 
             // Main_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 700);
+            this.ClientSize = new System.Drawing.Size(1112, 612);
             this.Controls.Add(this.pnlMainContent);
             this.Controls.Add(this.pnlSidebar);
-            this.MinimumSize = new System.Drawing.Size(1200, 650);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(904, 535);
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sân Bóng Mini - Hệ Thống Chính";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.ResumeLayout(false);

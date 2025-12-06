@@ -41,7 +41,6 @@ namespace QuanLySanBongMini
             pnlMainContent.Controls.Add(uc);
         }
 
-        // Method to handle button active state
         private void SetActiveButton(Button button)
         {
             if (currentActiveButton != null)
@@ -55,44 +54,43 @@ namespace QuanLySanBongMini
             button.ForeColor = Color.White;
         }
 
-        // Event handlers for menu buttons
         private void btnHeThong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHeThong);
-            // Logic sẽ thêm ở giai đoạn 2
+            
         }
 
         private void btnDatSan_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnDatSan);
-            // Logic sẽ thêm ở giai đoạn 2
+            
             loadUserControl(UIDatSan);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnKhachHang);
-            // Logic sẽ thêm ở giai đoạn 2
+            
             loadUserControl(UIKhachHang);
         }
 
         private void btnSanBong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnSanBong);
-            // Logic sẽ thêm ở giai đoạn 2
+            
             loadUserControl(UISanBong);
         }
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnBanHang);
-            // Logic sẽ thêm ở giai đoạn 2
+            
         }
 
         private void btnHangHoa_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHangHoa);
-            // Logic sẽ thêm ở giai đoạn 2
+            
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -106,7 +104,9 @@ namespace QuanLySanBongMini
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnThongKe);
-            // Logic sẽ thêm ở giai đoạn 2
+
+            User_control.ucThongKe uc = new User_control.ucThongKe();
+            loadUserControl(uc);
         }
 
         public async void Main_Form_Load(object sender, EventArgs e)
@@ -138,12 +138,11 @@ namespace QuanLySanBongMini
 
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void pnlMainContent_Paint(object sender, PaintEventArgs e)
-        {
-
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát chương trình?", "Thoát?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void lblLogo_Click(object sender, EventArgs e)
@@ -152,9 +151,5 @@ namespace QuanLySanBongMini
             loadUserControl(uc);
         }
 
-        private void pnlMainContent_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

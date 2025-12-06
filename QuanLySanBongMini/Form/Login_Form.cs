@@ -79,8 +79,9 @@ namespace QuanLySanBongMini
                     else
                     {
                         Main_Form f = new Main_Form(user.manv);
-                        f.Show();
                         this.Hide();
+                        f.ShowDialog();
+                        this.Close();
                     }
                 }
             }
@@ -104,6 +105,10 @@ namespace QuanLySanBongMini
             }
         }
 
-        
+        private void linkLblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword_Form f = new ForgotPassword_Form();
+            f.ShowDialog();
+        }
     }
 }

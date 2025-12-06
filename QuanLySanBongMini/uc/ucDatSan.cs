@@ -18,7 +18,8 @@ namespace QuanLySanBongMini
 {
     public partial class ucDatSan : UserControl
     {
-
+        // Mã nhân viên đã đăng nhập
+        public string MaNV_logged;
         //khởi tạo biến lock semaphore
         SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
@@ -33,6 +34,11 @@ namespace QuanLySanBongMini
         public ucDatSan()
         {
             InitializeComponent();
+        }
+
+        public ucDatSan(string maNhanVien): this()
+        {
+            MaNV_logged = maNhanVien;
         }
 
         private async Task<(int maphieu, string makh, string masan,DateTime ngaybatdau, 
@@ -537,8 +543,8 @@ namespace QuanLySanBongMini
             {
                 PhieuDatSan insertPhieuDat = new PhieuDatSan()
                 {
-                    //thiếu mã nhân viên
-                    manv = "NV001",
+                    
+                    manv = MaNV_logged,
                     makh = input.makh,
                     masan = input.masan,
                     thoigianbatdau = input.ngaybatdau,
