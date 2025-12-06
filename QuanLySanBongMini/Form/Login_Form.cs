@@ -80,8 +80,21 @@ namespace QuanLySanBongMini
                     {
                         Main_Form f = new Main_Form(user.manv);
                         this.Hide();
-                        f.ShowDialog();
-                        this.Close();
+                        DialogResult result = f.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            // Nếu bên Main_Form trả về OK (tức là bấm Đóng ca/Đăng xuất)
+                            // Thì hiện lại Login Form để đăng nhập tiếp
+                            this.Show();
+                            txtPassword.Clear(); // Xóa mật khẩu cũ
+                            txtUsername.Focus();
+                        }
+                        else
+                        {
+                            // Nếu bên Main_Form đóng bằng nút X (hoặc Alt+F4)
+                            // Thì đóng luôn Login Form để thoát hẳn chương trình
+                            this.Close();
+                        }
                     }
                 }
             }

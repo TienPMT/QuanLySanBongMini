@@ -250,6 +250,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Img\Nhân viên\NV001.jpg" />
+    <Content Include="Img\Nhân viên\NV002.jpg" />
     <Content Include="Img\Nhân viên\QL001.jpg" />
     <Content Include="Img\Sản phẩm\AQUAFINA.jpg" />
     <Content Include="Img\Sản phẩm\KHAN.jpg" />

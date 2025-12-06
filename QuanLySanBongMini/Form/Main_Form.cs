@@ -19,9 +19,13 @@ namespace QuanLySanBongMini
 
         private string manv_logged;
 
-        ucKhachHang UIKhachHang = new ucKhachHang();
-        ucSanBong UISanBong = new ucSanBong();
-        ucDatSan UIDatSan = new ucDatSan();
+        // Biến để phân biệt giữa đóng ca và thoát chương trình
+        private bool isDongCa = false;
+
+        ucKhachHang UIKhachHang;
+        ucSanBong UISanBong;
+        ucDatSan UIDatSan;
+        ucTaiKhoan UITaiKhoan;
 
         public Main_Form(string MaNhanVien)
         {
@@ -29,6 +33,12 @@ namespace QuanLySanBongMini
 
             // Gán mã nhân viên đăng nhập
             this.manv_logged = MaNhanVien;
+
+            // Khởi tạo các UserControl
+            UIKhachHang = new ucKhachHang();
+            UISanBong = new ucSanBong();
+            UIDatSan = new ucDatSan(MaNhanVien);
+            UITaiKhoan = new ucTaiKhoan();
 
             // Set default active button
             SetActiveButton(btnHeThong);
@@ -57,9 +67,7 @@ namespace QuanLySanBongMini
         private void btnHeThong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHeThong);
-
-            ucTaiKhoan uc = new ucTaiKhoan();
-            loadUserControl(uc);
+            MenuHeThong.Show(btnHeThong, new Point(0, btnHeThong.Height));
         }
 
         private void btnDatSan_Click(object sender, EventArgs e)
@@ -142,6 +150,13 @@ namespace QuanLySanBongMini
 
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Nếu đang đóng ca thì không hiện dialog xác nhận
+            if (isDongCa)
+            {
+                return;
+            }
+
+            // Nếu user click nút X hoặc Alt+F4, hiện dialog xác nhận
             DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát chương trình?", "Thoát?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
@@ -153,6 +168,32 @@ namespace QuanLySanBongMini
         {
             ucMainForm uc = new ucMainForm();
             loadUserControl(uc);
+        }
+
+        private void txt_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            // Load thông tin tài khoản của nhân viên đang đăng nhập
+            if (!string.IsNullOrEmpty(manv_logged))
+            {
+                UITaiKhoan.LoadByMaNV(manv_logged);
+            }
+
+            loadUserControl(UITaiKhoan);
+        }
+
+        private void txt_DongCa_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đóng ca không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Đánh dấu là đang đóng ca để không hiện dialog trong FormClosing
+                isDongCa = true;
+                
+                // Đóng Main_Form và quay về Login_Form
+                this.DialogResult = DialogResult.OK;
+
+                this.Close();
+            }
         }
 
     }

@@ -105,14 +105,8 @@ namespace QuanLySanBongMini
             pb.Location = new Point(10, 10);
             pb.SizeMode = PictureBoxSizeMode.Zoom;
 
-            // Xử lý đường dẫn ảnh
-            string imgName = string.IsNullOrEmpty(sp.HinhAnhSP) ? "no-image.png" : sp.HinhAnhSP;
-            string path = Path.Combine(Application.StartupPath, "Images", imgName);
 
-            if (File.Exists(path))
-                pb.Image = Image.FromFile(path);
-            else
-                pb.BackColor = Color.Bisque; // Màu tạm nếu không tìm thấy ảnh
+            LoadProductImage(pb, sp.HinhAnhSP);
 
             // Nếu hết hàng thì hiện nhãn đè lên
             if (hetHang)
@@ -163,6 +157,64 @@ namespace QuanLySanBongMini
             pnl.Controls.Add(lblTon);
 
             return pnl;
+        }
+
+        private void LoadProductImage(PictureBox pb, string hinhAnhSP)
+        {
+            // Đường dẫn đến thư mục gốc của project
+            string projectRoot = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\"));
+            // Danh sách các thư mục có thể chứa ảnh
+            var folderCandidates = new List<string>
+            {
+                Path.Combine(projectRoot, "Images"),
+                Path.Combine(projectRoot, "Img"),
+                Path.Combine(projectRoot, "Img", "Sản phẩm"),
+                Path.Combine(projectRoot, "img")
+            };
+
+            // Nếu không có tên file trong database, dùng no-image
+            string imageName = string.IsNullOrEmpty(hinhAnhSP) ? "no-image" : Path.GetFileNameWithoutExtension(hinhAnhSP);
+
+            // Các đuôi file hỗ trợ
+            string[] extensions = { ".jpg", ".png", ".jpeg", ".gif" };
+            string imagePath = null;
+
+            foreach (var folder in folderCandidates)
+            {
+                if (!Directory.Exists(folder)) continue;
+
+                foreach (var ext in extensions)
+                {
+                    string fullPath = Path.Combine(folder, imageName + ext);
+                    if (File.Exists(fullPath))
+                    {
+                        imagePath = fullPath;
+                        break;
+                    }
+                }
+                if (imagePath != null) break;
+            }
+
+            if (imagePath != null)
+            {
+                try
+                {
+                    // Sử dụng Image.FromFile để đơn giản hóa, hoặc giữ FileStream nếu cần tránh khóa file
+                    pb.Image = Image.FromFile(imagePath);
+                }
+                catch (Exception ex)
+                {
+                    pb.BackColor = Color.LightGray;
+                    pb.Image = null;
+                    Console.WriteLine("Lỗi tải ảnh: " + ex.Message);
+                }
+            }
+            else
+            {
+                // Nếu không tìm thấy, hiển thị màu nền thay thế
+                pb.BackColor = Color.LightGray;
+                pb.Image = null;
+            }
         }
 
         // ================== 2. XỬ LÝ GIỎ HÀNG ==================

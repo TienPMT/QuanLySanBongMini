@@ -292,12 +292,14 @@
             this.txt_TaiKhoan.Name = "txt_TaiKhoan";
             this.txt_TaiKhoan.Size = new System.Drawing.Size(126, 22);
             this.txt_TaiKhoan.Text = "Tài Khoản";
+            this.txt_TaiKhoan.Click += new System.EventHandler(this.txt_TaiKhoan_Click);
             // 
             // txt_DongCa
             // 
             this.txt_DongCa.Name = "txt_DongCa";
             this.txt_DongCa.Size = new System.Drawing.Size(126, 22);
             this.txt_DongCa.Text = "Đóng ca";
+            this.txt_DongCa.Click += new System.EventHandler(this.txt_DongCa_Click);
             // 
             // Main_Form
             // 

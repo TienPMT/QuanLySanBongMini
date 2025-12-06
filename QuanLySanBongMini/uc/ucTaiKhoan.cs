@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using QuanLySanBongMini.Database;
-// using QuanLySanBongMini.Database.Entities; // Bỏ nếu không dùng trực tiếp class Entities
 
 namespace QuanLySanBongMini
 {
@@ -32,7 +31,6 @@ namespace QuanLySanBongMini
             this.MaNhanVienToLoad = maNV;
             txt_MaNV.Text = maNV;
 
-            // 1. Xóa trắng dữ liệu cũ trước khi load
             ClearData();
 
             if (string.IsNullOrEmpty(maNV)) return;
@@ -41,7 +39,6 @@ namespace QuanLySanBongMini
             {
                 using (var db = new QL_SANBONG_MINIDatacontext())
                 {
-                    // 2. Tối ưu truy vấn: Dùng AsNoTracking() vì chỉ đọc dữ liệu để hiển thị
                     var nv = db.NhanViens
                                .AsNoTracking()
                                .Include(n => n.tencv) // Đảm bảo load bảng liên kết ChucVu
@@ -53,15 +50,13 @@ namespace QuanLySanBongMini
                         return;
                     }
 
-                    // 3. Gán dữ liệu (Bỏ Reflection, gán trực tiếp)
                     txt_HoTen.Text = nv.hoten ?? string.Empty;
                     txt_SDT.Text = nv.sdt ?? string.Empty;
                     txt_ChucVu.Text = nv.tencv?.tencv ?? string.Empty; // Null conditional operator
                     txt_GioiTinh.Text = nv.gioitinh ?? string.Empty;
 
                     
-                    // 4. Load ảnh
-                    LoadEmployeeImage(maNV);
+                    LoadEmployeeImage(nv.HinhAnhNV, maNV);
                 }
             }
             catch (Exception ex)
@@ -70,49 +65,96 @@ namespace QuanLySanBongMini
             }
         }
 
-        private void LoadEmployeeImage(string maNV)
+        // SỬA: Thêm tham số hinhAnhNV từ database
+        private void LoadEmployeeImage(string hinhAnhNV, string maNV)
         {
-            // 5. Giải phóng ảnh cũ để tránh tràn bộ nhớ
             if (pic_NhanVien.Image != null)
             {
                 pic_NhanVien.Image.Dispose();
                 pic_NhanVien.Image = null;
             }
 
+            // Đường dẫn đến thư mục gốc của project
+            string projectRoot = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\\"));
             // Danh sách các thư mục có thể chứa ảnh
             var folderCandidates = new List<string>
             {
-                Path.Combine(Application.StartupPath, "Images"),      // Ưu tiên thư mục chuẩn
-                Path.Combine(Application.StartupPath, "Img", "Nhân viên"),
-                Path.Combine(Application.StartupPath, "img")
+                Path.Combine(projectRoot, "Images"),
+                Path.Combine(projectRoot, "Img"),
+                Path.Combine(projectRoot, "Img", "Nhân viên"),
+                Path.Combine(projectRoot, "img")
             };
 
             // Các đuôi file hỗ trợ
             string[] extensions = { ".jpg", ".png", ".jpeg" };
+            string imagePath = null;
 
-            foreach (var folder in folderCandidates)
+            // ƯU TIÊN 1: Tìm theo tên file trong database (nếu có)
+            if (!string.IsNullOrEmpty(hinhAnhNV))
             {
-                if (!Directory.Exists(folder)) continue;
-
-                foreach (var ext in extensions)
+                string imageNameFromDB = Path.GetFileNameWithoutExtension(hinhAnhNV);
+                
+                foreach (var folder in folderCandidates)
                 {
-                    string fullPath = Path.Combine(folder, maNV + ext);
-                    if (File.Exists(fullPath))
+                    if (!Directory.Exists(folder)) continue;
+
+                    foreach (var ext in extensions)
                     {
-                        // 6. Dùng FileStream để KHÔNG khóa file ảnh trên ổ cứng
-                        using (var fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+                        string fullPath = Path.Combine(folder, imageNameFromDB + ext);
+                        if (File.Exists(fullPath))
                         {
-                            pic_NhanVien.Image = Image.FromStream(fs);
-                            pic_NhanVien.SizeMode = PictureBoxSizeMode.Zoom;
+                            imagePath = fullPath;
+                            break;
                         }
-                        return; // Tìm thấy và load xong thì thoát luôn
                     }
+                    if (imagePath != null) break;
                 }
             }
 
-            // Nếu không tìm thấy ảnh nào -> Để trống hoặc set ảnh mặc định
-            pic_NhanVien.Image = null;
-            // pic_NhanVien.Image = Properties.Resources.DefaultUser; // Gợi ý: Nên có ảnh mặc định
+            // ƯU TIÊN 2: Tìm theo mã nhân viên (fallback)
+            if (imagePath == null)
+            {
+                foreach (var folder in folderCandidates)
+                {
+                    if (!Directory.Exists(folder)) continue;
+
+                    foreach (var ext in extensions)
+                    {
+                        string fullPath = Path.Combine(folder, maNV + ext);
+                        if (File.Exists(fullPath))
+                        {
+                            imagePath = fullPath;
+                            break;
+                        }
+                    }
+                    if (imagePath != null) break;
+                }
+            }
+
+            // Nếu tìm thấy ảnh, tải ảnh. Ngược lại, set ảnh mặc định hoặc để trống.
+            if (imagePath != null)
+            {
+                try
+                {
+                    // Sử dụng Image.FromFile để đơn giản hóa, hoặc giữ FileStream nếu cần tránh khóa file
+                    pic_NhanVien.Image = Image.FromFile(imagePath);
+                    pic_NhanVien.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi nếu không thể tải ảnh
+                    pic_NhanVien.Image = null;
+                    pic_NhanVien.BackColor = Color.LightGray;
+                    Console.WriteLine("Lỗi tải ảnh: " + ex.Message);
+                }
+            }
+            else
+            {
+                // Nếu không tìm thấy ảnh nào -> Để trống hoặc set ảnh mặc định
+                pic_NhanVien.Image = null;
+                pic_NhanVien.BackColor = Color.LightGray;
+                // pic_NhanVien.Image = Properties.Resources.DefaultUser; // Gợi ý: Nên có ảnh mặc định
+            }
         }
 
         private void ClearData()
