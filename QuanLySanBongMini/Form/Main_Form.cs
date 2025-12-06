@@ -1,5 +1,6 @@
 ﻿using QuanLySanBongMini.Database;
 using QuanLySanBongMini.Database.Entities;
+using QuanLySanBongMini.uc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace QuanLySanBongMini
         ucSanBong UISanBong;
         ucDatSan UIDatSan;
         ucTaiKhoan UITaiKhoan;
-
+        
         public Main_Form(string MaNhanVien)
         {
             InitializeComponent();
@@ -102,7 +103,9 @@ namespace QuanLySanBongMini
         private void btnHangHoa_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHangHoa);
-            
+
+            ucHangHoa uc = new ucHangHoa();
+            loadUserControl(uc);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)

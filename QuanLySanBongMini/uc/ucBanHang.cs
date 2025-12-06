@@ -161,8 +161,10 @@ namespace QuanLySanBongMini
 
         private void LoadProductImage(PictureBox pb, string hinhAnhSP)
         {
-            // Đường dẫn đến thư mục gốc của project
-            string projectRoot = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\"));
+            // **RELIABLE WAY TO GET PROJECT ROOT**
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\"));
+
             // Danh sách các thư mục có thể chứa ảnh
             var folderCandidates = new List<string>
             {

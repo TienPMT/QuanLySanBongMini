@@ -230,12 +230,12 @@ namespace QuanLySanBongMini
             Load_cbbTrangThai();
             Load_Image();
             Load_SanBong();
+            await CapNhatTrangThaiPhieu();
             ClearForm();
         }
 
-        private async void Load_PhieuDatSan(List<PhieuDatSan> phieuDatSans)
+        private void Load_PhieuDatSan(List<PhieuDatSan> phieuDatSans)
         {
-            await CapNhatTrangThaiPhieu();
             phieuDatSans.OrderByDescending(s => s.thoigianbatdau).ToList();
             dgvPhieuDatSan.AutoGenerateColumns = false;
             dgvPhieuDatSan.DataSource = phieuDatSans;

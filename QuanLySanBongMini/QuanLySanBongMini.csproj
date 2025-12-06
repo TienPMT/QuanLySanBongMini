@@ -145,6 +145,12 @@
       <DependentUpon>ThongKeDoanhThu.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\ucHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucHangHoa.Designer.cs">
+      <DependentUpon>ucHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc\ucMainForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +220,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucHangHoa.resx">
+      <DependentUpon>ucHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uc\ucMainForm.resx">
       <DependentUpon>ucMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,9 +259,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Img\Nhân viên\NV001.jpg" />
-    <Content Include="Img\Nhân viên\NV002.jpg" />
-    <Content Include="Img\Nhân viên\QL001.jpg" />
+    <Content Include="Img\NhanVien\NV001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\NhanVien\NV002.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\NhanVien\QL001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Sản phẩm\AQUAFINA.jpg" />
     <Content Include="Img\Sản phẩm\KHAN.jpg" />
     <Content Include="Img\Sản phẩm\PEPSI.jpg" />

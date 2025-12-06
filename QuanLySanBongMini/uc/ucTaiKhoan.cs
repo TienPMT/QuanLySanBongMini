@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Drawing;
-using System.IO;
+using System.IO; // Thư viện quan trọng
 using System.Linq;
 using System.Windows.Forms;
 using QuanLySanBongMini.Database;
@@ -11,27 +10,19 @@ namespace QuanLySanBongMini
 {
     public partial class ucTaiKhoan : UserControl
     {
-        public string MaNhanVienToLoad { get; set; }
+        // Biến lưu mã NV để dùng lại
+        private string _currentMaNV;
 
         public ucTaiKhoan()
         {
             InitializeComponent();
         }
 
-        private void ucTaiKhoan_Load(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(this.MaNhanVienToLoad))
-            {
-                LoadByMaNV(this.MaNhanVienToLoad);
-            }
-        }
-
+        // Hàm này Main_Form sẽ gọi mỗi khi nhấn nút "Tài khoản"
         public void LoadByMaNV(string maNV)
         {
-            this.MaNhanVienToLoad = maNV;
+            _currentMaNV = maNV;
             txt_MaNV.Text = maNV;
-
-            ClearData();
 
             if (string.IsNullOrEmpty(maNV)) return;
 
@@ -41,133 +32,66 @@ namespace QuanLySanBongMini
                 {
                     var nv = db.NhanViens
                                .AsNoTracking()
-                               .Include(n => n.tencv) // Đảm bảo load bảng liên kết ChucVu
+                               .Include(n => n.tencv)
                                .FirstOrDefault(n => n.manv == maNV);
 
-                    if (nv == null)
-                    {
-                        MessageBox.Show($"Không tìm thấy nhân viên: {maNV}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                    if (nv == null) return;
 
-                    txt_HoTen.Text = nv.hoten ?? string.Empty;
-                    txt_SDT.Text = nv.sdt ?? string.Empty;
-                    txt_ChucVu.Text = nv.tencv?.tencv ?? string.Empty; // Null conditional operator
-                    txt_GioiTinh.Text = nv.gioitinh ?? string.Empty;
+                    // 1. Load thông tin chữ
+                    txt_HoTen.Text = nv.hoten ?? "";
+                    txt_SDT.Text = nv.sdt ?? "";
+                    txt_ChucVu.Text = nv.tencv?.tencv ?? "";
+                    txt_GioiTinh.Text = nv.gioitinh ?? "";
 
-                    
-                    LoadEmployeeImage(nv.HinhAnhNV, maNV);
+                    // 2. Load Hình Ảnh (An toàn)
+                    LoadAvatarSafe(nv.HinhAnhNV);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
             }
         }
 
-        // SỬA: Thêm tham số hinhAnhNV từ database
-        private void LoadEmployeeImage(string hinhAnhNV, string maNV)
+        // --- HÀM LOAD ẢNH AN TOÀN (KHÔNG KHÓA FILE) ---
+        private void LoadAvatarSafe(string tenFile)
         {
+            // Reset ảnh cũ
             if (pic_NhanVien.Image != null)
             {
                 pic_NhanVien.Image.Dispose();
                 pic_NhanVien.Image = null;
             }
 
-            // Đường dẫn đến thư mục gốc của project
-            string projectRoot = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\\"));
-            // Danh sách các thư mục có thể chứa ảnh
-            var folderCandidates = new List<string>
-            {
-                Path.Combine(projectRoot, "Images"),
-                Path.Combine(projectRoot, "Img"),
-                Path.Combine(projectRoot, "Img", "Nhân viên"),
-                Path.Combine(projectRoot, "img")
-            };
+            if (string.IsNullOrEmpty(tenFile)) return;
 
-            // Các đuôi file hỗ trợ
-            string[] extensions = { ".jpg", ".png", ".jpeg" };
-            string imagePath = null;
+            // Logic tìm đường dẫn (Ưu tiên thư mục bin/Debug)
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory; // bin/Debug
+            string path1 = Path.Combine(baseDir, "Img", "NhanVien", tenFile);
 
-            // ƯU TIÊN 1: Tìm theo tên file trong database (nếu có)
-            if (!string.IsNullOrEmpty(hinhAnhNV))
-            {
-                string imageNameFromDB = Path.GetFileNameWithoutExtension(hinhAnhNV);
-                
-                foreach (var folder in folderCandidates)
-                {
-                    if (!Directory.Exists(folder)) continue;
+            // Backup: Tìm lùi ra thư mục project (dành cho lúc Dev)
+            string projectDir = Path.GetFullPath(Path.Combine(baseDir, @"..\..\"));
+            string path2 = Path.Combine(projectDir, "Img", "NhanVien", tenFile);
 
-                    foreach (var ext in extensions)
-                    {
-                        string fullPath = Path.Combine(folder, imageNameFromDB + ext);
-                        if (File.Exists(fullPath))
-                        {
-                            imagePath = fullPath;
-                            break;
-                        }
-                    }
-                    if (imagePath != null) break;
-                }
-            }
+            string finalPath = null;
+            if (File.Exists(path1)) finalPath = path1;
+            else if (File.Exists(path2)) finalPath = path2;
 
-            // ƯU TIÊN 2: Tìm theo mã nhân viên (fallback)
-            if (imagePath == null)
-            {
-                foreach (var folder in folderCandidates)
-                {
-                    if (!Directory.Exists(folder)) continue;
-
-                    foreach (var ext in extensions)
-                    {
-                        string fullPath = Path.Combine(folder, maNV + ext);
-                        if (File.Exists(fullPath))
-                        {
-                            imagePath = fullPath;
-                            break;
-                        }
-                    }
-                    if (imagePath != null) break;
-                }
-            }
-
-            // Nếu tìm thấy ảnh, tải ảnh. Ngược lại, set ảnh mặc định hoặc để trống.
-            if (imagePath != null)
+            if (finalPath != null)
             {
                 try
                 {
-                    // Sử dụng Image.FromFile để đơn giản hóa, hoặc giữ FileStream nếu cần tránh khóa file
-                    pic_NhanVien.Image = Image.FromFile(imagePath);
-                    pic_NhanVien.SizeMode = PictureBoxSizeMode.Zoom;
+                    // QUAN TRỌNG: Dùng FileStream để đọc, sau đó đóng luồng ngay
+                    using (FileStream fs = new FileStream(finalPath, FileMode.Open, FileAccess.Read))
+                    {
+                        pic_NhanVien.Image = Image.FromStream(fs);
+                        pic_NhanVien.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
                 }
-                catch (Exception ex)
+                catch
                 {
-                    // Xử lý lỗi nếu không thể tải ảnh
-                    pic_NhanVien.Image = null;
-                    pic_NhanVien.BackColor = Color.LightGray;
-                    Console.WriteLine("Lỗi tải ảnh: " + ex.Message);
+                    // Nếu ảnh lỗi thì bỏ qua, không crash
                 }
-            }
-            else
-            {
-                // Nếu không tìm thấy ảnh nào -> Để trống hoặc set ảnh mặc định
-                pic_NhanVien.Image = null;
-                pic_NhanVien.BackColor = Color.LightGray;
-                // pic_NhanVien.Image = Properties.Resources.DefaultUser; // Gợi ý: Nên có ảnh mặc định
-            }
-        }
-
-        private void ClearData()
-        {
-            txt_HoTen.Clear();
-            txt_SDT.Clear();
-            txt_ChucVu.Clear();
-            txt_GioiTinh.Clear();
-         
-            if (pic_NhanVien.Image != null)
-            {
-                pic_NhanVien.Image.Dispose();
-                pic_NhanVien.Image = null;
             }
         }
     }

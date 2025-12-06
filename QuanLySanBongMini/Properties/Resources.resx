@@ -124,5 +124,13 @@
   <data name="San5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\San5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
+  <data name="NV001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\NhanVien\NV001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NV002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\NhanVien\NV002.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QL001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\NhanVien\QL001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
