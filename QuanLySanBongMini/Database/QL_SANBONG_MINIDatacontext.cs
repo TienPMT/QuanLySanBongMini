@@ -10,9 +10,9 @@ namespace QuanLySanBongMini.Database
 {
     public class QL_SANBONG_MINIDatacontext: DbContext
     {
-        public QL_SANBONG_MINIDatacontext(): base("Server=LAPTOP-FKT50S5U\\SQLEXPRESS; Database= QL_SANBONG_MINI; User ID=sa; Password=luong0123456789")
+        public QL_SANBONG_MINIDatacontext(): base("Server= DESKTOP-S9NUQEL\\TIENPM; Database= QL_SANBONG_MINI; User ID= sa; Password= 123")
         {
-
+            
         }
 
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
@@ -25,5 +25,7 @@ namespace QuanLySanBongMini.Database
         public DbSet<SanBong> SanBongs { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
-    }
+        public DbSet<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+        public DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
+        }
 }
