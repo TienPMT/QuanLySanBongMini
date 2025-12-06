@@ -26,6 +26,13 @@ namespace QuanLySanBongMini
         ucKhachHang UIKhachHang = new ucKhachHang();
         ucSanBong UISanBong = new ucSanBong();
         ucDatSan UIDatSan = new ucDatSan();
+        ucTaiKhoan UITaiKhoan = new ucTaiKhoan();
+        ucBanHang UIThucDon = new ucBanHang();
+        //Sửa tên bán hàng thành thực đơn
+
+       
+
+
 
         public Main_Form()
 >>>>>>>> develop:QuanLySanBongMini/Main_Form.cs
@@ -34,6 +41,36 @@ namespace QuanLySanBongMini
             this.manv_logged = MaNhanVien;
             // Set default active button
             SetActiveButton(btnHeThong);
+        }
+
+        // Constructor accepting a single argument (employee id)
+        public Main_Form(string maNV) : this()
+        {
+            // Hiển thị MaNV vào lbl_TaiKhoan (giả sử tồn tại trên form; nếu không, dùng Tag)
+            try
+            {
+                var lblTaiKhoan = this.Controls.Find("lbl_TaiKhoan", true).FirstOrDefault() as Label;
+                if (lblTaiKhoan != null)
+                {
+                    lblTaiKhoan.Text = maNV; // Hiển thị trực tiếp trên giao diện
+                }
+                else
+                {
+                    // Fallback: Lưu vào Tag để các UserControl sử dụng sau (ví dụ: quyền hạn dựa trên MaNV)
+                    this.Tag = maNV;
+                }
+
+                // Gán mã nhân viên cho ucTaiKhoan để khi người dùng mở phần Tài khoản, control sẽ load đúng dữ liệu
+                if (!string.IsNullOrEmpty(maNV))
+                {
+                    UITaiKhoan.LoadByMaNV(maNV);
+                }
+            }
+            catch
+            {
+                // Nếu lỗi, lưu vào Tag
+                this.Tag = maNV;
+            }
         }
 
         private void loadUserControl(UserControl uc)
@@ -62,7 +99,9 @@ namespace QuanLySanBongMini
         {
             SetActiveButton(btnHeThong);
             // Logic sẽ thêm ở giai đoạn 2
+            MenuHeThong.Show(btnHeThong, new Point(0, btnHeThong.Height));
         }
+
 
         private void btnDatSan_Click(object sender, EventArgs e)
         {
@@ -89,6 +128,7 @@ namespace QuanLySanBongMini
         {
             SetActiveButton(btnBanHang);
             // Logic sẽ thêm ở giai đoạn 2
+            loadUserControl(UIThucDon);
         }
 
         private void btnHangHoa_Click(object sender, EventArgs e)
@@ -111,6 +151,40 @@ namespace QuanLySanBongMini
             // Logic sẽ thêm ở giai đoạn 2
         }
 
+<<<<<<< HEAD:QuanLySanBongMini/Main_Form.cs
+        private void txt_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnHeThong);
+
+            // Trước khi load uc, đảm bảo uc đã có mã nhân viên hiện tại (lấy từ lbl_TaiKhoan hoặc Tag)
+            string currentMaNV = null;
+            var lblTaiKhoan = this.Controls.Find("lbl_TaiKhoan", true).FirstOrDefault() as Label;
+            if (lblTaiKhoan != null && !string.IsNullOrEmpty(lblTaiKhoan.Text))
+            {
+                currentMaNV = lblTaiKhoan.Text;
+            }
+            else if (this.Tag != null)
+            {
+                currentMaNV = this.Tag.ToString();
+            }
+
+            if (!string.IsNullOrEmpty(currentMaNV))
+            {
+                UITaiKhoan.LoadByMaNV(currentMaNV);
+            }
+
+            loadUserControl(UITaiKhoan);
+        }
+
+        private void txt_DongCa_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đóng ca không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Logic đóng ca sẽ được thêm ở giai đoạn 2
+               this.Close();
+            }
+=======
         public async void Main_Form_Load(object sender, EventArgs e)
         {
             using (var db = new QL_SANBONG_MINIDatacontext())
@@ -159,6 +233,7 @@ namespace QuanLySanBongMini
         {
             ucMainForm uc = new ucMainForm();
             loadUserControl(uc);
+>>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Dashboard.cs
         }
     }
 }
