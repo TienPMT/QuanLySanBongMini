@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ namespace QuanLySanBongMini.Database.Entities
     [Table("ChiTietHoaDon")]
     public class ChiTietHoaDon
     {
-        [Column("MAHD", Order = 0), ForeignKey("hoadon")]
+        [Column("MAHD", Order = 0), Key, ForeignKey("hoadon")]
         public int mahd { get; set; }
 
-        [Column("MASP", Order = 1), ForeignKey("sanpham")]
+        [Column("MASP", Order = 1), Key, ForeignKey("sanpham")]
         public string masp { get; set; }
 
         [Column("SOLUONG")]

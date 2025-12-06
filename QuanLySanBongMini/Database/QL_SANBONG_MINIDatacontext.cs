@@ -10,9 +10,13 @@ namespace QuanLySanBongMini.Database
 {
     public class QL_SANBONG_MINIDatacontext: DbContext
     {
-        public QL_SANBONG_MINIDatacontext(): base("Server= DESKTOP-S9NUQEL\\MSSQLSERVER_2012; Database= QL_SANBONG_MINI; User ID= sa; Password= 123")
+<<<<<<< HEAD
+        public QL_SANBONG_MINIDatacontext(): base("Server=YUMMY; Database= QL_SANBONG_MINI; User ID=sa; Password=123")
+=======
+        public QL_SANBONG_MINIDatacontext(): base("Server= DESKTOP-S9NUQEL\\TIENPM; Database= QL_SANBONG_MINI; User ID= sa; Password= 123")
+>>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
         {
-
+            
         }
 
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
@@ -25,5 +29,12 @@ namespace QuanLySanBongMini.Database
         public DbSet<SanBong> SanBongs { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
+<<<<<<< HEAD
+        public DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
     }
+=======
+        public DbSet<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+        public DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
+        }
+>>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
 }
