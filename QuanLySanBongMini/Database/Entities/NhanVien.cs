@@ -30,10 +30,6 @@ namespace QuanLySanBongMini.Database.Entities
         [Required]
         public string sdt { get; set; }
 
-        [Column("NGAYSINH")]
-        [Required]
-        public DateTime? ngaysinh;
-
         [Column("LUONG_CO_BAN")]
         public decimal luongcb { get; set;  }
 

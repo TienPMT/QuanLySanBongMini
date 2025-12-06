@@ -65,15 +65,9 @@
             this.pnlSidebar.Controls.Add(this.pnlLogo);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(7);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(594, 1619);
-=======
             this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(188, 612);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.pnlSidebar.TabIndex = 0;
             // 
             // lblUserInfo
@@ -82,17 +76,10 @@
             this.lblUserInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblUserInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblUserInfo.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.lblUserInfo.Location = new System.Drawing.Point(0, 1503);
-            this.lblUserInfo.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(594, 116);
-=======
             this.lblUserInfo.Location = new System.Drawing.Point(0, 571);
             this.lblUserInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.lblUserInfo.TabIndex = 9;
             this.lblUserInfo.Text = "Hello, [User]";
             this.lblUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,19 +93,11 @@
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnThongKe.Location = new System.Drawing.Point(0, 1099);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(7);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnThongKe.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnThongKe.Location = new System.Drawing.Point(0, 393);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnThongKe.TabIndex = 8;
             this.btnThongKe.Text = "📊  Thống Kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,19 +113,11 @@
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 997);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(7);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnNhanVien.Size = new System.Drawing.Size(594, 102);
-=======
             this.btnNhanVien.Location = new System.Drawing.Point(0, 352);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnNhanVien.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnNhanVien.TabIndex = 7;
             this.btnNhanVien.Text = "👥  Nhân Viên";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,19 +133,11 @@
             this.btnHangHoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHangHoa.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnHangHoa.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnHangHoa.Location = new System.Drawing.Point(0, 881);
-            this.btnHangHoa.Margin = new System.Windows.Forms.Padding(7);
-            this.btnHangHoa.Name = "btnHangHoa";
-            this.btnHangHoa.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnHangHoa.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnHangHoa.Location = new System.Drawing.Point(0, 311);
             this.btnHangHoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnHangHoa.Name = "btnHangHoa";
             this.btnHangHoa.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnHangHoa.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnHangHoa.TabIndex = 6;
             this.btnHangHoa.Text = "📦  Hàng Hóa";
             this.btnHangHoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,19 +153,11 @@
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnBanHang.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnBanHang.Location = new System.Drawing.Point(0, 765);
-            this.btnBanHang.Margin = new System.Windows.Forms.Padding(7);
-            this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnBanHang.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnBanHang.Location = new System.Drawing.Point(0, 270);
             this.btnBanHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnBanHang.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnBanHang.TabIndex = 5;
             this.btnBanHang.Text = "💰  Thực Đơn";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,19 +173,11 @@
             this.btnSanBong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSanBong.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnSanBong.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnSanBong.Location = new System.Drawing.Point(0, 649);
-            this.btnSanBong.Margin = new System.Windows.Forms.Padding(7);
-            this.btnSanBong.Name = "btnSanBong";
-            this.btnSanBong.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnSanBong.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnSanBong.Location = new System.Drawing.Point(0, 229);
             this.btnSanBong.Margin = new System.Windows.Forms.Padding(2);
             this.btnSanBong.Name = "btnSanBong";
             this.btnSanBong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnSanBong.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnSanBong.TabIndex = 4;
             this.btnSanBong.Text = "⚽  Sân Bóng";
             this.btnSanBong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,19 +193,11 @@
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 533);
-            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(7);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnKhachHang.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnKhachHang.Location = new System.Drawing.Point(0, 188);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnKhachHang.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnKhachHang.TabIndex = 3;
             this.btnKhachHang.Text = "👤  Khách Hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,19 +213,11 @@
             this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatSan.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnDatSan.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnDatSan.Location = new System.Drawing.Point(0, 417);
-            this.btnDatSan.Margin = new System.Windows.Forms.Padding(7);
-            this.btnDatSan.Name = "btnDatSan";
-            this.btnDatSan.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnDatSan.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnDatSan.Location = new System.Drawing.Point(0, 147);
             this.btnDatSan.Margin = new System.Windows.Forms.Padding(2);
             this.btnDatSan.Name = "btnDatSan";
             this.btnDatSan.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnDatSan.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnDatSan.TabIndex = 2;
             this.btnDatSan.Text = "📅  Đặt Sân";
             this.btnDatSan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,19 +233,11 @@
             this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnHeThong.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.btnHeThong.Location = new System.Drawing.Point(0, 301);
-            this.btnHeThong.Margin = new System.Windows.Forms.Padding(7);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnHeThong.Size = new System.Drawing.Size(594, 116);
-=======
             this.btnHeThong.Location = new System.Drawing.Point(0, 106);
             this.btnHeThong.Margin = new System.Windows.Forms.Padding(2);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnHeThong.Size = new System.Drawing.Size(188, 41);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.btnHeThong.TabIndex = 1;
             this.btnHeThong.Text = "⚙️  Hệ Thống";
             this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,15 +249,9 @@
             this.pnlLogo.Controls.Add(this.lblLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(7);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(594, 301);
-=======
             this.pnlLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(188, 106);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.pnlLogo.TabIndex = 0;
             // 
             // lblLogo
@@ -343,15 +260,9 @@
             this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblLogo.ForeColor = System.Drawing.Color.White;
             this.lblLogo.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.lblLogo.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(594, 301);
-=======
             this.lblLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(188, 106);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "⚽\r\nQUẢN LÝ\r\nSÂN BÓNG";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,17 +272,10 @@
             // 
             this.pnlMainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.pnlMainContent.Location = new System.Drawing.Point(594, 0);
-            this.pnlMainContent.Margin = new System.Windows.Forms.Padding(7);
-            this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(2494, 1619);
-=======
             this.pnlMainContent.Location = new System.Drawing.Point(188, 0);
             this.pnlMainContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(924, 612);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.pnlMainContent.TabIndex = 1;
             // 
             // MenuHeThong
@@ -381,33 +285,22 @@
             this.txt_TaiKhoan,
             this.txt_DongCa});
             this.MenuHeThong.Name = "MenuHeThong";
-            this.MenuHeThong.Size = new System.Drawing.Size(421, 182);
+            this.MenuHeThong.Size = new System.Drawing.Size(127, 48);
             // 
             // txt_TaiKhoan
             // 
             this.txt_TaiKhoan.Name = "txt_TaiKhoan";
-            this.txt_TaiKhoan.Size = new System.Drawing.Size(420, 56);
+            this.txt_TaiKhoan.Size = new System.Drawing.Size(126, 22);
             this.txt_TaiKhoan.Text = "Tài Khoản";
-            this.txt_TaiKhoan.Click += new System.EventHandler(this.txt_TaiKhoan_Click);
             // 
             // txt_DongCa
             // 
             this.txt_DongCa.Name = "txt_DongCa";
-            this.txt_DongCa.Size = new System.Drawing.Size(420, 56);
+            this.txt_DongCa.Size = new System.Drawing.Size(126, 22);
             this.txt_DongCa.Text = "Đóng ca";
-            this.txt_DongCa.Click += new System.EventHandler(this.txt_DongCa_Click);
             // 
             // Main_Form
             // 
-<<<<<<< HEAD:QuanLySanBongMini/Main_Form.Designer.cs
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3088, 1619);
-            this.Controls.Add(this.pnlMainContent);
-            this.Controls.Add(this.pnlSidebar);
-            this.Margin = new System.Windows.Forms.Padding(7);
-            this.MinimumSize = new System.Drawing.Size(2800, 1368);
-=======
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 612);
@@ -417,7 +310,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(904, 535);
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3:QuanLySanBongMini/Form/Main_Form.Designer.cs
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sân Bóng Mini - Hệ Thống Chính";
@@ -450,4 +342,3 @@
         private System.Windows.Forms.ToolStripMenuItem txt_DongCa;
     }
 }
-

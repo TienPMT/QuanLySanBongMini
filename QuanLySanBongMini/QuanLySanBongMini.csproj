@@ -75,12 +75,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-<<<<<<< HEAD
     <Reference Include="System.Design" />
-=======
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -136,15 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="ucBanHang.cs">
+    <Compile Include="uc\ucBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBanHang.Designer.cs">
+    <Compile Include="uc\ucBanHang.Designer.cs">
       <DependentUpon>ucBanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucDatSan.cs">
-=======
     <Compile Include="Report\ThongKeDoanhThu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,7 +146,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\ucMainForm.cs">
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uc\ucMainForm.Designer.cs">
@@ -182,15 +175,12 @@
     <Compile Include="uc\ucSanBong.Designer.cs">
       <DependentUpon>ucSanBong.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="ucTaiKhoan.cs">
+    <Compile Include="uc\ucTaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTaiKhoan.Designer.cs">
+    <Compile Include="uc\ucTaiKhoan.Designer.cs">
       <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Main_Form.resx">
-=======
     <Compile Include="uc\ucThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,7 +192,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Main_Form.resx">
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login_Form.resx">
@@ -218,12 +207,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
-    <EmbeddedResource Include="ucBanHang.resx">
+    <EmbeddedResource Include="uc\ucBanHang.resx">
       <DependentUpon>ucBanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucDatSan.resx">
-=======
     <EmbeddedResource Include="Report\ThongKeDoanhThu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
@@ -235,7 +221,6 @@
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc\ucDatSan.resx">
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
       <DependentUpon>ucDatSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc\ucKhachHang.resx">
@@ -244,13 +229,11 @@
     <EmbeddedResource Include="uc\ucSanBong.resx">
       <DependentUpon>ucSanBong.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="ucTaiKhoan.resx">
+    <EmbeddedResource Include="uc\ucTaiKhoan.resx">
       <DependentUpon>ucTaiKhoan.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="uc\ucThongKe.resx">
       <DependentUpon>ucThongKe.cs</DependentUpon>
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -267,14 +250,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="Img\Nhân viên\NV001.jpg" />
+    <Content Include="Img\Nhân viên\QL001.jpg" />
     <Content Include="Img\Sản phẩm\AQUAFINA.jpg" />
     <Content Include="Img\Sản phẩm\KHAN.jpg" />
     <Content Include="Img\Sản phẩm\PEPSI.jpg" />
     <Content Include="Img\Sản phẩm\SNACK.jpg" />
     <Content Include="Img\Sản phẩm\STING.jpg" />
-=======
+    <Content Include="Resources\San5.jpg" />
+    <Content Include="Resources\San7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
@@ -288,11 +273,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
->>>>>>> ccda21e4a2672a1695fd6d89063868ad9c40c0b3
-    <Content Include="Resources\San5.jpg" />
-    <Content Include="Resources\San7.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

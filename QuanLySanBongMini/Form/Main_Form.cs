@@ -57,7 +57,9 @@ namespace QuanLySanBongMini
         private void btnHeThong_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHeThong);
-            
+
+            ucTaiKhoan uc = new ucTaiKhoan();
+            loadUserControl(uc);
         }
 
         private void btnDatSan_Click(object sender, EventArgs e)
@@ -84,7 +86,9 @@ namespace QuanLySanBongMini
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnBanHang);
-            
+
+            ucBanHang uc = new ucBanHang();
+            loadUserControl(uc);
         }
 
         private void btnHangHoa_Click(object sender, EventArgs e)

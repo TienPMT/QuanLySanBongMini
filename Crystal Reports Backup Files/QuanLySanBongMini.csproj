@@ -1,210 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>{5791D772-F7B2-42CC-B945-6F3185B840FA}</ProjectGuid>
-		<OutputType>WinExe</OutputType>
-		<RootNamespace>QuanLySanBongMini</RootNamespace>
-		<AssemblyName>QuanLySanBongMini</AssemblyName>
-		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-		<FileAlignment>512</FileAlignment>
-		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-		<Deterministic>true</Deterministic>
-		<NuGetPackageImportStamp>
-		</NuGetPackageImportStamp>
-		<PublishUrl>publish\</PublishUrl>
-		<Install>true</Install>
-		<InstallFrom>Disk</InstallFrom>
-		<UpdateEnabled>false</UpdateEnabled>
-		<UpdateMode>Foreground</UpdateMode>
-		<UpdateInterval>7</UpdateInterval>
-		<UpdateIntervalUnits>Days</UpdateIntervalUnits>
-		<UpdatePeriodically>false</UpdatePeriodically>
-		<UpdateRequired>false</UpdateRequired>
-		<MapFileExtensions>true</MapFileExtensions>
-		<ApplicationRevision>0</ApplicationRevision>
-		<ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-		<IsWebBootstrapper>false</IsWebBootstrapper>
-		<UseApplicationTrust>false</UseApplicationTrust>
-		<BootstrapperEnabled>true</BootstrapperEnabled>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<DebugType>pdbonly</DebugType>
-		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-		<Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-		<Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-		<Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-		<Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-			<HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
-		</Reference>
-		<Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-			<HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-		</Reference>
-		<Reference Include="System" />
-		<Reference Include="System.ComponentModel.DataAnnotations" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Web" />
-		<Reference Include="System.Web.Services" />
-		<Reference Include="System.Xml.Linq" />
-		<Reference Include="System.Data.DataSetExtensions" />
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Data" />
-		<Reference Include="System.Deployment" />
-		<Reference Include="System.Drawing" />
-		<Reference Include="System.Net.Http" />
-		<Reference Include="System.Windows.Forms" />
-		<Reference Include="System.Xml" />
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Database\Entities\ChiTietHoaDon.cs" />
-		<Compile Include="Database\Entities\ChucVu.cs" />
-		<Compile Include="Database\Entities\HoaDonDichVu.cs" />
-		<Compile Include="Database\Entities\KhachHang.cs" />
-		<Compile Include="Database\Entities\LoaiSan.cs" />
-		<Compile Include="Database\Entities\NhanVien.cs" />
-		<Compile Include="Database\Entities\PhieuDatSan.cs" />
-		<Compile Include="Database\Entities\SanBong.cs" />
-		<Compile Include="Database\Entities\SanPham.cs" />
-		<Compile Include="Database\Entities\TaiKhoan.cs" />
-		<Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
-		<Compile Include="Main_Form.cs">
-			<SubType>Form</SubType>
-		</Compile>
-		<Compile Include="Main_Form.Designer.cs">
-			<DependentUpon>Main_Form.cs</DependentUpon>
-		</Compile>
-		<Compile Include="DTOs\ChucVuDTO.cs" />
-		<Compile Include="DTOs\NhanVienDTO.cs" />
-		<Compile Include="Form\Login_Form.cs">
-			<SubType>Form</SubType>
-		</Compile>
-		<Compile Include="Form\Login_Form.Designer.cs">
-			<DependentUpon>Login_Form.cs</DependentUpon>
-		</Compile>
-		<Compile Include="Program.cs" />
-		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="User control\ucMainForm.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Include="User control\ucMainForm.Designer.cs">
-			<DependentUpon>ucMainForm.cs</DependentUpon>
-		</Compile>
-		<Compile Include="User control\ucNhanVien.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Include="User control\ucNhanVien.Designer.cs">
-			<DependentUpon>ucNhanVien.cs</DependentUpon>
-		</Compile>
-		<Compile Include="ucDatSan.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Include="ucDatSan.Designer.cs">
-			<DependentUpon>ucDatSan.cs</DependentUpon>
-		</Compile>
-		<Compile Include="ucKhachHang.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Include="ucKhachHang.Designer.cs">
-			<DependentUpon>ucKhachHang.cs</DependentUpon>
-		</Compile>
-		<Compile Include="ucSanBong.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Include="ucSanBong.Designer.cs">
-			<DependentUpon>ucSanBong.cs</DependentUpon>
-		</Compile>
-		<EmbeddedResource Include="Main_Form.resx">
-			<DependentUpon>Main_Form.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="Form\Login_Form.resx">
-			<DependentUpon>Login_Form.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="Properties\Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
-			<SubType>Designer</SubType>
-		</EmbeddedResource>
-		<Compile Include="Properties\Resources.Designer.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Resources.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-		</Compile>
-		<EmbeddedResource Include="User control\ucMainForm.resx">
-			<DependentUpon>ucMainForm.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="User control\ucNhanVien.resx">
-			<DependentUpon>ucNhanVien.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="ucDatSan.resx">
-			<DependentUpon>ucDatSan.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="ucKhachHang.resx">
-			<DependentUpon>ucKhachHang.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="ucSanBong.resx">
-			<DependentUpon>ucSanBong.cs</DependentUpon>
-		</EmbeddedResource>
-		<None Include="packages.config" />
-		<None Include="Properties\Settings.settings">
-			<Generator>SettingsSingleFileGenerator</Generator>
-			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
-		</None>
-		<Compile Include="Properties\Settings.Designer.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Settings.settings</DependentUpon>
-			<DesignTimeSharedInput>True</DesignTimeSharedInput>
-		</Compile>
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="App.config" />
-	</ItemGroup>
-	<ItemGroup>
-		<Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-	</ItemGroup>
-	<ItemGroup>
-		<BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-			<Visible>False</Visible>
-			<ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-			<Install>true</Install>
-		</BootstrapperPackage>
-		<BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-			<Visible>False</Visible>
-			<ProductName>.NET Framework 3.5 SP1</ProductName>
-			<Install>false</Install>
-		</BootstrapperPackage>
-	</ItemGroup>
-	<ItemGroup>
-		<Content Include="Resources\San5.jpg" />
-		<Content Include="Resources\San7.jpg" />
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-	<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-		<PropertyGroup>
-			<ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-		</PropertyGroup>
-		<Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
-		<Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
-	</Target>
-	<Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5791D772-F7B2-42CC-B945-6F3185B840FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLySanBongMini</RootNamespace>
+    <AssemblyName>QuanLySanBongMini</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\Entities\CartItem.cs" />
+    <Compile Include="Database\Entities\ChiTietHoaDon.cs" />
+    <Compile Include="Database\Entities\ChiTietPhieuNhap.cs" />
+    <Compile Include="Database\Entities\ChucVu.cs" />
+    <Compile Include="Database\Entities\HoaDonDichVu.cs" />
+    <Compile Include="Database\Entities\KhachHang.cs" />
+    <Compile Include="Database\Entities\LoaiSan.cs" />
+    <Compile Include="Database\Entities\LoaiSanPham.cs" />
+    <Compile Include="Database\Entities\NhanVien.cs" />
+    <Compile Include="Database\Entities\PhieuDatSan.cs" />
+    <Compile Include="Database\Entities\PhieuNhapHang.cs" />
+    <Compile Include="Database\Entities\SanBong.cs" />
+    <Compile Include="Database\Entities\SanPham.cs" />
+    <Compile Include="Database\Entities\TaiKhoan.cs" />
+    <Compile Include="Database\QL_SANBONG_MINIDatacontext.cs" />
+    <Compile Include="DTOs\ChiTietHoaDonDTO.cs" />
+    <Compile Include="DTOs\HoaDonDichVuDTO.cs" />
+    <Compile Include="DTOs\KhachHangDTO.cs" />
+    <Compile Include="DTOs\PhieuDatSanDTO.cs" />
+    <Compile Include="DTOs\SanPham.DTO.cs" />
+    <Compile Include="DTOs\ThongKeChiPhiDTO.cs" />
+    <Compile Include="DTOs\ThongKeHoaDonDTO.cs" />
+    <Compile Include="Form\ForgotPassword_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ForgotPassword_Form.Designer.cs">
+      <DependentUpon>ForgotPassword_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\ChucVuDTO.cs" />
+    <Compile Include="DTOs\NhanVienDTO.cs" />
+    <Compile Include="Form\Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uc\ucBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucBanHang.Designer.cs">
+      <DependentUpon>ucBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ThongKeDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\ucMainForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucMainForm.Designer.cs">
+      <DependentUpon>ucMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucNhanVien.Designer.cs">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucDatSan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucDatSan.Designer.cs">
+      <DependentUpon>ucDatSan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucKhachHang.Designer.cs">
+      <DependentUpon>ucKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucSanBong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucSanBong.Designer.cs">
+      <DependentUpon>ucSanBong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucTaiKhoan.Designer.cs">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ucThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\ForgotPassword_Form.resx">
+      <DependentUpon>ForgotPassword_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="uc\ucBanHang.resx">
+      <DependentUpon>ucBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ThongKeDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucMainForm.resx">
+      <DependentUpon>ucMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucNhanVien.resx">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucDatSan.resx">
+      <DependentUpon>ucDatSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucKhachHang.resx">
+      <DependentUpon>ucKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucSanBong.resx">
+      <DependentUpon>ucSanBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucTaiKhoan.resx">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\Nhân viên\NV001.jpg" />
+    <Content Include="Img\Sản phẩm\AQUAFINA.jpg" />
+    <Content Include="Img\Sản phẩm\KHAN.jpg" />
+    <Content Include="Img\Sản phẩm\PEPSI.jpg" />
+    <Content Include="Img\Sản phẩm\SNACK.jpg" />
+    <Content Include="Img\Sản phẩm\STING.jpg" />
+    <Content Include="Resources\San5.jpg" />
+    <Content Include="Resources\San7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>
