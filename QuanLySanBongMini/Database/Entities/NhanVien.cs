@@ -23,6 +23,9 @@ namespace QuanLySanBongMini.Database.Entities
         [Required]
         public string gioitinh { get; set; }
 
+        [Column("NGAYSINH")]
+        public DateTime ngaysinh { get; set; }
+
         [Column("SDT")]
         [Required]
         public string sdt { get; set; }
@@ -30,6 +33,12 @@ namespace QuanLySanBongMini.Database.Entities
         [Column("NGAYSINH")]
         [Required]
         public DateTime? ngaysinh;
+
+        [Column("LUONG_CO_BAN")]
+        public decimal luongcb { get; set;  }
+
+        [Column("EMAIL")]
+        public string email { get; set;  }
 
         [Column("MACV"), ForeignKey("tencv")]
         [Required]
